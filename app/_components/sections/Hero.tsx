@@ -9,8 +9,8 @@ import Image from "next/image";
 import heroSlider1 from "@/public/eas-hero-slider-1.png";
 import heroSlider2 from "@/public/hero-slider-2.png";
 import heroSlider3 from "@/public/hero-slider-3.png";
-import PaperOverlay from "../PaperOverlay";
-import Button from "@/app/_components/Button";
+import PaperOverlay from "@/app/_components/ui/PaperOverlay";
+import Button from "@/app/_components/ui/Button";
 
 const Hero = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -68,7 +68,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative uppercase">
+    <section className="relative w-full uppercase">
       <Swiper
         className="h-[100vh] min-h-[600px] w-full"
         modules={[EffectFade, Autoplay]}
@@ -93,7 +93,7 @@ const Hero = () => {
                 quality={100}
                 fill
               />
-              <div className="px-16 text-center md:px-0">
+              <div className="px-4 text-center xl:px-0">
                 <AnimatePresence>
                   {index === activeSlider && (
                     <>
@@ -111,7 +111,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ duration: 0.7 }}
-                        className="mb-8 text-5xl font-black italic text-white md:text-6xl"
+                        className="mb-8 text-5xl font-black italic tracking-tight text-white md:text-6xl"
                       >
                         {item?.title.before && item?.title?.before}
                         {item?.title?.highlight && (
