@@ -5,11 +5,12 @@ import vegetableCategory from "@/public/eas-vegetable-category-thumbnail.png";
 import fruitsCategory from "@/public/eas-fruits-category-thumbnail.png";
 import meatCategory from "@/public/eas-meat-and-poultry-category-thumbnail.png";
 import Button from "@/app/_components/ui/Button";
+import CategoryCard from "@/app/_components/ui/CategoryCard";
 
 const Products = () => {
   return (
     <section className="w-full pb-[72px]">
-      <div className="mx-auto max-w-[1320px] px-4">
+      <div className="mx-auto max-w-[1320px] px-4 xl:px-0">
         <SectionHeader align="left">OUR PRODUCTS</SectionHeader>
         <Description align="left" className="mb-8 mt-8 max-w-[735px]">
           Discover the finest harvest from our farm, featuring fresh vegetables,
@@ -18,8 +19,9 @@ const Products = () => {
           that every item delivers freshness, flavor, and value you can trust.
         </Description>
       </div>
-      <div className="mt-8 flex">
-        <div className="bg-secondary-100 group relative flex flex-1 flex-col items-center justify-center p-20">
+
+      <div className="mt-8 flex flex-col text-center lg:flex-row">
+        <CategoryCard overlay="1">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image
               src={vegetableCategory}
@@ -33,14 +35,9 @@ const Products = () => {
           <div className="z-10 mt-2">
             <Button>Browse Products</Button>
           </div>
-          <Image
-            className="object-cover"
-            src="/eas-category-overlay-1.png"
-            fill
-            alt="category overlay 1"
-          />
-        </div>
-        <div className="bg-brown-100 group relative flex flex-1 flex-col items-center justify-center p-20">
+        </CategoryCard>
+
+        <CategoryCard overlay="2">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image src={fruitsCategory} fill alt="fruit category thumbnail" />
           </div>
@@ -50,14 +47,9 @@ const Products = () => {
           <div className="z-10 mt-2">
             <Button>Browse Products</Button>
           </div>
-          <Image
-            className="object-cover"
-            src="/eas-category-overlay-2.png"
-            fill
-            alt="category overlay 2"
-          />
-        </div>
-        <div className="bg-secondary-100 group relative flex flex-1 flex-col items-center justify-center p-20">
+        </CategoryCard>
+
+        <CategoryCard overlay="3">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image
               src={meatCategory}
@@ -71,13 +63,7 @@ const Products = () => {
           <div className="z-10 mt-2">
             <Button>Browse Products</Button>
           </div>
-          <Image
-            className="object-cover"
-            src="/eas-category-overlay-3.png"
-            fill
-            alt="category overlay 3"
-          />
-        </div>
+        </CategoryCard>
       </div>
     </section>
   );
