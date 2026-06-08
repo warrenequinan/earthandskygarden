@@ -24,7 +24,7 @@ const Products = () => {
       </div>
 
       <div className="mt-8 flex flex-col text-center lg:flex-row">
-        <CategoryCard overlay="1">
+        <CategoryCard overlay="vegetables">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image
               src={vegetableCategory}
@@ -40,7 +40,7 @@ const Products = () => {
           </div>
         </CategoryCard>
 
-        <CategoryCard overlay="2">
+        <CategoryCard overlay="fruits">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image src={fruitsCategory} fill alt="fruit category thumbnail" />
           </div>
@@ -52,7 +52,7 @@ const Products = () => {
           </div>
         </CategoryCard>
 
-        <CategoryCard overlay="3">
+        <CategoryCard overlay="meat">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image
               src={meatCategory}
@@ -67,6 +67,9 @@ const Products = () => {
             <Button>Browse Products</Button>
           </div>
         </CategoryCard>
+      </div>
+      <div className="mt-16">
+        <SectionHeader align="center">Fresh Products</SectionHeader>
       </div>
     </section>
   );
