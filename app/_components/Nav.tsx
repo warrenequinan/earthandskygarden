@@ -7,7 +7,7 @@ type NavPropType = {
   isScrolled: boolean;
 }
 
-const Nav = ({ isScrolled }) => {
+const Nav = ({ isScrolled }: NavPropType) => {
   return (
     <div className="flex items-center gap-4">
       <Button>
