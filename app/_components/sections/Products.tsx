@@ -19,8 +19,8 @@ const Products = () => {
         </Description>
       </div>
       <div className="mt-8 flex">
-        <div className="bg-secondary-100 relative flex flex-1 flex-col items-center justify-center p-20">
-          <div className="relative z-10 mb-4 h-[186px] w-[186px]">
+        <div className="bg-secondary-100 group relative flex flex-1 flex-col items-center justify-center p-20">
+          <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image
               src={vegetableCategory}
               fill
@@ -40,8 +40,8 @@ const Products = () => {
             alt="category overlay 1"
           />
         </div>
-        <div className="bg-brown-100 relative flex flex-1 flex-col items-center justify-center p-20">
-          <div className="relative z-10 mb-4 h-[186px] w-[186px]">
+        <div className="bg-brown-100 group relative flex flex-1 flex-col items-center justify-center p-20">
+          <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image src={fruitsCategory} fill alt="fruit category thumbnail" />
           </div>
           <h3 className="z-10 text-2xl font-black uppercase text-primary">
@@ -57,8 +57,8 @@ const Products = () => {
             alt="category overlay 2"
           />
         </div>
-        <div className="bg-secondary-100 relative flex flex-1 flex-col items-center justify-center p-20">
-          <div className="relative z-10 mb-4 h-[186px] w-[186px]">
+        <div className="bg-secondary-100 group relative flex flex-1 flex-col items-center justify-center p-20">
+          <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
             <Image
               src={meatCategory}
               fill
