@@ -2,12 +2,18 @@ import { HiShoppingBag } from "react-icons/hi";
 
 type CartButtonPropType = {
   onClick?: () => void;
+  isScrolled: boolean;
 };
 
-const CartButton = ({ onClick }: CartButtonPropType) => {
+const CartButton = ({ onClick, isScrolled }: CartButtonPropType) => {
   return (
-    <button className="relative text-white" onClick={onClick}>
-      <span className="absolute text-[10px] font-semibold text-white rounded-full bg-accent-700 p-[4px] leading-none top-[8px] right-[-5px]">12</span>
+    <button
+      className={`transition-all duration-700 relative ${isScrolled ? "text-primary" : "text-white"}`}
+      onClick={onClick}
+    >
+      <span className="absolute right-[-5px] top-[8px] rounded-full bg-accent-700 p-[4px] text-[10px] font-semibold leading-none text-white">
+        12
+      </span>
       <HiShoppingBag className="text-4xl" />
     </button>
   );
