@@ -9,8 +9,8 @@ import Image from "next/image";
 import heroSlider1 from "@/public/eas-hero-slider-1.png";
 import heroSlider2 from "@/public/hero-slider-2.png";
 import heroSlider3 from "@/public/hero-slider-3.png";
-import PaperOverlay from "../PaperOverlay";
-import Button from "@/app/_components/Button";
+import PaperOverlay from "@/app/_components/ui/PaperOverlay";
+import Button from "@/app/_components/ui/Button";
 
 const Hero = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);

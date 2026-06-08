@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Logo from "../Logo";
-import Nav from "../Nav";
+import Logo from "../ui/Logo";
+import Nav from "../ui/Nav";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

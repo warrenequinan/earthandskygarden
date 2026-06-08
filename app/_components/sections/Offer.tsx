@@ -1,5 +1,11 @@
 const Offer = () => {
-  return <div className="h-[1000px]"></div>;
+  return (
+    <section>
+      <div>
+        <h1>Offer</h1>
+      </div>
+    </section>
+  );
 };
 
 export default Offer;
