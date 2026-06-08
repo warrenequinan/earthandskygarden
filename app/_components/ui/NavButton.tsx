@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import NavList from "./NavList";
+import clsx from "clsx";
 
 const NavButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,13 +34,22 @@ const NavButton = () => {
         onClick={() => setIsOpen((curr) => !curr)}
       >
         <span
-          className={`inline-block h-[2.5px] ${isOpen ? "w-8" : "w-6"} rounded-[10px] bg-accent-700 leading-normal ease-in-out ${isOpen && "translate-y-[10px] rotate-[-45deg]"} transition-transform`}
+          className={clsx(
+            "inline-block h-[2.5px] rounded-full bg-accent-700 leading-normal transition-transform ease-in-out",
+            isOpen ? "w-8 translate-y-[10px] rotate-[-45deg]" : "w-6",
+          )}
         ></span>
         <span
-          className={`inline-block h-[2.5px] w-[33px] rounded-[10px] bg-accent-700 leading-normal transition-transform duration-300 ease-in-out ${isOpen && "translate-x-[50px]"}`}
+          className={clsx(
+            "inline-block h-[2.5px] w-[33px] rounded-full bg-accent-700 leading-normal transition-transform duration-300 ease-in-out",
+            isOpen && "translate-x-[50px]",
+          )}
         ></span>
         <span
-          className={`inline-block h-[2.5px] ${isOpen ? "w-8" : "w-6"} rounded-[10px] bg-accent-700 leading-normal transition-transform ease-in-out ${isOpen && "translate-y-[-7px] rotate-[45deg]"}`}
+          className={clsx(
+            "inline-block h-[2.5px] rounded-full bg-accent-700 leading-normal transition-transform ease-in-out",
+            isOpen ? "w-8 translate-y-[-7px] rotate-[45deg]" : "w-6",
+          )}
         ></span>
       </button>
 

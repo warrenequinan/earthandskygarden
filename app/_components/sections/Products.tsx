@@ -70,6 +70,7 @@ const Products = () => {
       </div>
       <div className="mt-16">
         <SectionHeader align="center">Fresh Products</SectionHeader>
+        <div className="mt-16"></div>
       </div>
     </section>
   );

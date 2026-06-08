@@ -5,7 +5,7 @@ import NavButton from "./NavButton";
 
 type NavPropType = {
   isScrolled: boolean;
-}
+};
 
 const Nav = ({ isScrolled }: NavPropType) => {
   return (

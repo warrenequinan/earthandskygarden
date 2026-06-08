@@ -8,7 +8,7 @@ type CartButtonPropType = {
 const CartButton = ({ onClick, isScrolled }: CartButtonPropType) => {
   return (
     <button
-      className={`transition-all duration-700 relative ${isScrolled ? "text-primary" : "text-white"}`}
+      className={`relative transition-all duration-700 ${isScrolled ? "text-muted-100" : "text-white"}`}
       onClick={onClick}
     >
       <span className="absolute right-[-5px] top-[8px] rounded-full bg-accent-700 p-[4px] text-[10px] font-semibold leading-none text-white">
