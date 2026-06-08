@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "swiper/css";
-import "./_styles/globals.css";
+import "@/app/_styles/globals.css";
 import "swiper/css/effect-fade";
 import Header from "./_components/sections/Header";
 
@@ -15,12 +15,16 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: {
     template: "Earth and Skygarden | %s",
-    default: "Earth and Skygarden | Home"
+    default: "Earth and Skygarden | Home",
   },
   description:
     "Rooted in a passion for agriculture and a commitment to quality, our farm specializes in producing fresh vegetables, premium mushrooms, and quality livestock products",
-  viewport: "width=device-width, initial-scale=1",
 };
+
+export const generateViewPort = () => ({
+  width: "device-width",
+  initialScale: 1,
+});
 
 type RootLayoutPropType = {
   children: React.ReactNode;
