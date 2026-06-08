@@ -7,6 +7,34 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        truckLoop: {
+          "0%": {
+            transform: "translateX(0)",
+          },
+
+          "70%": {
+            transform: "translateX(250px)",
+            opacity: "1",
+          },
+
+          "71%": {
+            transform: "translateX(-80px)",
+            opacity: "0",
+          },
+
+          "72%": {
+            opacity: "1",
+          },
+
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
+      },
+      animation: {
+        truckAnim: "truckLoop 500ms linear",
+      },
       colors: {
         primary: "#0D3F4A",
         secondary: {
