@@ -13,7 +13,7 @@ const Offer = () => {
           Nature&apos;s Best, Straight <br className="hidden sm:block" />
           From the Farm
         </SectionHeader>
-        <Description align="center" className="mx-auto max-w-[618px] pt-8">
+        <Description align="center" className="mx-auto mt-8 max-w-[618px]">
           From carefully grown vegetables and mushrooms to responsibly raised
           livestock products, we bring nature&apos;s finest harvest directly to
           your table.

@@ -1,16 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { usePathname } from "next/navigation";
+import NavList from "./NavList";
 
 const NavButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
-  const navBaseStyle =
-    "rounded-[5px] px-4 py-2 text-muted-100 transition-colors hover:font-medium hover:text-accent-700";
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -57,33 +53,7 @@ const NavButton = () => {
             transition={{ duration: 0.3 }}
             className="absolute right-0 top-[70px] w-[251px] overflow-hidden rounded-[5px] bg-white p-4 font-normal shadow-md"
           >
-            <ul>
-              <li
-                className={`${navBaseStyle} ${pathname === "/" && "font-medium !text-accent-700"}`}
-              >
-                <Link href="#">Home</Link>
-              </li>
-              <li
-                className={`${navBaseStyle} ${pathname === "/products" && "font-medium !text-accent-700"}`}
-              >
-                <Link href="#">Our Products</Link>
-              </li>
-              <li
-                className={`${navBaseStyle} ${pathname === "/about" && "font-medium !text-accent-700"}`}
-              >
-                <Link href="#">About Us</Link>
-              </li>
-              <li
-                className={`${navBaseStyle} ${pathname === "/gallery" && "font-medium !text-accent-700"}`}
-              >
-                <Link href="#">Gallery</Link>
-              </li>
-              <li
-                className={`${navBaseStyle} ${pathname === "contact" && "font-medium !text-accent-700"}`}
-              >
-                <Link href="#">Contact Us</Link>
-              </li>
-            </ul>
+            <NavList />
           </motion.nav>
         )}
       </AnimatePresence>
