@@ -1,10 +1,15 @@
 import Image from "next/image";
 import logo from "@/public/eas-logo.svg";
+import darkLogo from "@/public/eas-logo-dark.svg";
 
-const Logo = () => {
+type LogoPropType = {
+  isScrolled: boolean;
+};
+
+const Logo = ({ isScrolled }: LogoPropType) => {
   return (
-    <div className="w-[120px] relative h-[46px]">
-      <Image src={logo} fill alt="Earth and Sky Garden Logo" />
+    <div className="relative h-[46px] w-[120px]">
+      <Image src={isScrolled ? darkLogo : logo} fill alt="Earth and Sky Garden Logo" />
     </div>
   );
 };

@@ -55,7 +55,7 @@ const NavButton = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-0 top-[60px] w-[251px] overflow-hidden rounded-[5px] bg-white p-4 font-normal shadow-md"
+            className="absolute right-0 top-[70px] w-[251px] overflow-hidden rounded-[5px] bg-white p-4 font-normal shadow-md"
           >
             <ul>
               <li
