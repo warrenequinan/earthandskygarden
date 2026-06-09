@@ -14,6 +14,7 @@ import ProductCartButton from "./ProductCartButton";
 import CartCounter from "./CartCounter";
 import CardContainer from "./CardContainer";
 import clsx from "clsx";
+import { Autoplay } from "swiper/modules";
 
 const ProductSlider = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -59,8 +60,13 @@ const ProductSlider = () => {
           setIsBeginning(s.isBeginning);
           setIsEnd(s.isEnd);
         }}
+        modules={[Autoplay]}
         slidesPerView={1}
         spaceBetween={16}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -92,7 +98,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -107,7 +113,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
@@ -130,7 +136,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -145,7 +151,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
@@ -168,7 +174,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -183,7 +189,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
@@ -206,7 +212,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -221,7 +227,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
@@ -244,7 +250,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -259,7 +265,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
@@ -282,7 +288,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -297,7 +303,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
@@ -320,7 +326,7 @@ const ProductSlider = () => {
             </h5>
             <p className="text-base text-primary">
               ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
+              <span className="ml-[10px] text-muted-300 line-through">
                 ₱ 85.00
               </span>
             </p>
@@ -335,45 +341,7 @@ const ProductSlider = () => {
                 <HiOutlineHeart strokeWidth={2} />
               </button>
             </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
-              <CartCounter />
-              <ProductCartButton>
-                <HiShoppingBag className="text-lg" /> Add to cart
-              </ProductCartButton>
-            </div>
-          </CardContainer>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardContainer>
-            <div className="relative mb-8 h-[191px] w-[251px]">
-              <Image
-                className="object-contain"
-                src="/products-thumbnail/Brocolli.png"
-                fill
-                alt="eas brocolli product thumbnail"
-              />
-            </div>
-            <h5 className="text-xl font-bold uppercase text-primary">
-              Brocolli
-            </h5>
-            <p className="text-base text-primary">
-              ₱ 75.00 / kg
-              <span className="text-muted-300 ml-[10px] line-through">
-                ₱ 85.00
-              </span>
-            </p>
-            <div className="absolute left-0 top-0 translate-x-6 translate-y-6 rounded-[5px] bg-primary px-4 py-1 text-xs font-bold uppercase text-white">
-              15% discount
-            </div>
-            <div className="absolute right-0 top-0 flex -translate-x-6 translate-y-6 flex-col gap-2 text-xl">
-              <button className="flex h-[39px] w-[39px] scale-0 items-center justify-center rounded-full border border-muted-200 px-[10px] py-3 text-primary transition-all duration-300 hover:bg-accent-700 hover:text-white group-hover:scale-100">
-                <HiOutlineEye strokeWidth={2} />
-              </button>
-              <button className="flex h-[39px] w-[39px] scale-0 items-center justify-center rounded-full border border-muted-200 px-[10px] py-3 text-primary transition-all duration-300 hover:bg-accent-700 hover:text-white group-hover:scale-100">
-                <HiOutlineHeart strokeWidth={2} />
-              </button>
-            </div>
-            <div className="flex max-h-0 w-full items-center justify-between overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-8 group-hover:max-h-[100%] group-hover:opacity-100">
+            <div className="mt-8 flex w-full justify-between">
               <CartCounter />
               <ProductCartButton>
                 <HiShoppingBag className="text-lg" /> Add to cart
