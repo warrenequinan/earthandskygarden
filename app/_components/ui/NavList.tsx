@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const NavList = () => {
   const pathname = usePathname();
   const navBaseStyle =
-    "rounded-[5px] px-4 py-2 text-muted-100 transition-colors hover:font-medium hover:text-accent-700";
+    "rounded-[5px] px-4 py-2 text-muted-300  transition-colors hover:font-medium hover:text-accent-700";
   return (
     <ul>
       <li

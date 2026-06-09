@@ -6,6 +6,7 @@ import fruitsCategory from "@/public/eas-fruits-category-thumbnail.png";
 import meatCategory from "@/public/eas-meat-and-poultry-category-thumbnail.png";
 import Button from "@/app/_components/ui/Button";
 import CategoryCard from "@/app/_components/ui/CategoryCard";
+import ProductSlider from "@/app/_components/ui/ProductSlider";
 
 const Products = () => {
   return (
@@ -70,7 +71,9 @@ const Products = () => {
       </div>
       <div className="mt-16">
         <SectionHeader align="center">Fresh Products</SectionHeader>
-        <div className="mt-16"></div>
+        <div className="mt-10 p-4">
+          <ProductSlider />
+        </div>
       </div>
     </section>
   );

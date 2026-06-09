@@ -35,7 +35,7 @@ const Offer = () => {
             <h5 className="mb-2 text-2xl font-black uppercase leading-[32.8px] text-primary sm:text-[28px]">
               Farm-fresh harvest
             </h5>
-            <Description align="center" className="max-w-[330px] text-primary">
+            <Description align="center" className="max-w-[330px] !text-primary">
               Handpicked vegetables and premium mushrooms grown with care to
               ensure freshness and nutrition.
             </Description>
@@ -56,7 +56,7 @@ const Offer = () => {
             <h5 className="mb-2 text-2xl font-black uppercase leading-[32.8px] text-white sm:text-[28px]">
               Best Quality
             </h5>
-            <Description align="center" className="max-w-[330px] text-white">
+            <Description align="center" className="max-w-[330px] !text-white">
               Every product we offer is the result of careful farming practices,
               dedicated attention, and a commitment to quality.
             </Description>
@@ -77,7 +77,7 @@ const Offer = () => {
             <h5 className="mb-2 text-2xl font-black uppercase leading-[32.8px] text-primary sm:text-[28px]">
               From farm to doorstep
             </h5>
-            <Description align="center" className="max-w-[330px] text-primary">
+            <Description align="center" className="max-w-[330px] !text-primary">
               Experience the finest farm-fresh products delivered straight to
               your door with unmatched speed, care, and convenience.
             </Description>
