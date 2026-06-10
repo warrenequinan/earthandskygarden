@@ -78,7 +78,6 @@ const Hero = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        loop={true}
         speed={1000}
         onSwiper={setSwiper}
         onSlideChange={(s) => setActiveSlider(s.activeIndex)}

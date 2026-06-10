@@ -24,7 +24,7 @@ const Header = () => {
     <header
       className={clsx(
         "fixed left-0 right-0 top-[0] z-[9999] flex justify-center p-4 transition-all duration-500",
-        scrolled && "bg-white shadow-md",
+        scrolled && "bg-white shadow-sm",
       )}
       ref={headerRef}
     >

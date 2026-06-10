@@ -79,11 +79,11 @@ const Products = () => {
         name: "Porkchop",
         category: "Meat",
         price: 120,
-        discount: 0,
+        discount: 10,
         image: "/products-thumbnail/Porkchop.png",
       },
       {
-        id: 6,
+        id: 10,
         name: "Chili",
         category: "Vegetables",
         price: 20,

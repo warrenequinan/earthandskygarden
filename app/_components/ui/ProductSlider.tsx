@@ -23,7 +23,7 @@ const ProductSlider = ({ products }: ProductSliderProps) => {
       <div className="mb-6 flex w-full justify-center gap-2">
         <button
           disabled={isBeginning}
-          className="group rounded-[5px] bg-muted-200 px-4 py-3 text-3xl text-primary disabled:cursor-not-allowed disabled:bg-muted-100"
+          className="group rounded-[5px] bg-muted-200 px-4 py-3 text-3xl text-primary disabled:cursor-not-allowed disabled:bg-muted-100 disabled:text-muted-500"
           onClick={() => swiper?.slidePrev()}
         >
           <HiChevronLeft
@@ -36,7 +36,7 @@ const ProductSlider = ({ products }: ProductSliderProps) => {
 
         <button
           disabled={isEnd}
-          className="group rounded-[5px] bg-muted-200 px-4 py-3 text-3xl text-primary disabled:cursor-not-allowed disabled:bg-muted-100"
+          className="group rounded-[5px] bg-muted-200 px-4 py-3 text-3xl text-primary disabled:cursor-not-allowed disabled:bg-muted-100 disabled:text-muted-500"
           onClick={() => swiper?.slideNext()}
         >
           <HiChevronRight
@@ -60,16 +60,16 @@ const ProductSlider = ({ products }: ProductSliderProps) => {
         modules={[Autoplay]}
         slidesPerView={1}
         spaceBetween={16}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
         breakpoints={{
           640: {
             slidesPerView: 2,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
           1280: {
             slidesPerView: 4,

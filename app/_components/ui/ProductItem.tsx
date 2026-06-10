@@ -1,8 +1,10 @@
 import Image from "next/image";
 import CardContainer from "./CardContainer";
-import CartCounter from "./CartCounter";
-import ProductCartButton from "./ProductCartButton";
-import { HiOutlineEye, HiOutlineHeart, HiShoppingBag } from "react-icons/hi";
+import {
+  HiOutlineEye,
+  HiOutlineHeart,
+  HiOutlineShoppingBag,
+} from "react-icons/hi";
 import type { Product } from "@/app/_types/product.types";
 
 type ProductItemType = {
@@ -17,10 +19,10 @@ const ProductItem = ({ product }: ProductItemType) => {
     <CardContainer>
       <div className="relative mb-8 h-[191px] w-[251px]">
         <Image
-          className="object-contain"
+          className="object-contain transition-all duration-[400ms] group-hover:scale-110"
           src={image}
           fill
-          alt={`eas ${name} product thumbnail`}
+          alt={`eas ${name.toLowerCase()} product thumbnail`}
         />
       </div>
       <h5 className="text-xl font-bold uppercase text-primary">{name}</h5>
@@ -39,25 +41,29 @@ const ProductItem = ({ product }: ProductItemType) => {
           {discount}% discount
         </div>
       )}
-      <div className="absolute right-0 top-0 flex -translate-x-6 translate-y-6 flex-col gap-2 text-xl">
-        <button className="relative flex h-[38px] w-[38px] scale-0 items-center justify-center rounded-full border border-muted-200 text-primary transition-all duration-300 hover:bg-accent-700 hover:text-white group-hover:scale-100">
-          <HiOutlineEye
-            strokeWidth={2}
-            className="absolute h-full w-full p-2"
-          />
-        </button>
-        <button className="relative flex h-[38px] w-[38px] scale-0 items-center justify-center rounded-full border border-muted-200 text-primary transition-all duration-300 hover:bg-accent-700 hover:text-white group-hover:scale-100">
-          <HiOutlineHeart
-            strokeWidth={2}
-            className="absolute h-full w-full p-2"
-          />
-        </button>
-      </div>
-      <div className="mt-8 flex w-full justify-between">
-        <CartCounter />
-        <ProductCartButton>
-          <HiShoppingBag className="text-lg" /> Add to cart
-        </ProductCartButton>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute flex translate-y-8 items-center rounded-[5px] bg-accent-700 px-4 py-2 text-xl opacity-0 transition-all duration-[400ms] group-hover:translate-y-0 group-hover:opacity-100">
+          <button className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100">
+            <HiOutlineShoppingBag
+              strokeWidth={2}
+              className="absolute h-full w-full p-2"
+            />
+          </button>
+          <div className="mx-3 h-[14px] w-[0.5px] bg-white opacity-50"></div>
+          <button className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100">
+            <HiOutlineEye
+              strokeWidth={2}
+              className="absolute h-full w-full p-2"
+            />
+          </button>
+          <div className="mx-3 h-[14px] w-[0.5px] bg-white opacity-50"></div>
+          <button className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100">
+            <HiOutlineHeart
+              strokeWidth={2}
+              className="absolute h-full w-full p-2"
+            />
+          </button>
+        </div>
       </div>
     </CardContainer>
   );

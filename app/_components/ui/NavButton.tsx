@@ -47,7 +47,7 @@ const NavButton = () => {
         ></span>
         <span
           className={clsx(
-            "h-[3px] rounded-full bg-accent-700 leading-normal transition-transform ease-in-out",
+            "h-[2.8px] rounded-full bg-accent-700 leading-normal transition-transform ease-in-out",
             isOpen ? "w-8 translate-y-[-8px] rotate-[45deg]" : "w-6",
           )}
         ></span>
