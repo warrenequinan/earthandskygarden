@@ -153,7 +153,7 @@ const Products = () => {
         </CategoryCard>
       </div>
       <div className="mt-16">
-        <SectionHeader align="center">Fresh Products</SectionHeader>
+        <SectionHeader align="center">Featured Products</SectionHeader>
         <div className="mt-10 p-4">
           <ProductSlider products={products} />
         </div>

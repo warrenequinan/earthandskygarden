@@ -16,7 +16,7 @@ const ProductItem = ({ product }: ProductItemType) => {
   const discountedPrice = discount > 0 ? price * (discount / 100) : 0;
 
   return (
-    <CardContainer>
+    <CardContainer className="hover:bg-muted-100">
       <div className="relative mb-8 h-[191px] w-[251px]">
         <Image
           className="object-contain transition-all duration-[400ms] group-hover:scale-110"
