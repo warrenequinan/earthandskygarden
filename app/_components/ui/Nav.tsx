@@ -5,13 +5,13 @@ import NavButton from "./NavButton";
 
 type NavPropType = {
   isScrolled: boolean;
-}
+};
 
 const Nav = ({ isScrolled }: NavPropType) => {
   return (
     <div className="flex items-center gap-4">
       <Button>
-        <HiUser className="text-[24px] leading-none" />{" "}
+        <HiUser className="text-[20px] leading-none" />{" "}
         <span className="hidden md:inline">Login / Sign up</span>
       </Button>
       <CartButton isScrolled={isScrolled} />

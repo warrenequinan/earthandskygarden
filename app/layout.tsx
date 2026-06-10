@@ -32,7 +32,10 @@ type RootLayoutPropType = {
 
 export default function RootLayout({ children }: RootLayoutPropType) {
   return (
-    <html lang="en" className={`${roboto.className} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${roboto.className} h-full antialiased transition-all duration-300`}
+    >
       <body className="relative">
         <Header />
         <main>{children}</main>

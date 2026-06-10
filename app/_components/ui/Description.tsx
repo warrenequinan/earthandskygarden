@@ -14,7 +14,7 @@ const Description = ({
   return (
     <p
       className={clsx(
-        "font-medium leading-[25px] text-muted-200",
+        "font-medium leading-[25px] text-muted-600",
         align === "center" ? "text-center" : "text-left",
         className,
       )}

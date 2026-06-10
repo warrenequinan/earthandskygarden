@@ -33,7 +33,7 @@ module.exports = {
         },
       },
       animation: {
-        truckAnim: "truckLoop 500ms linear",
+        truckAnim: "truckLoop 350ms linear",
       },
       colors: {
         primary: "#0D3F4A",
@@ -41,8 +41,15 @@ module.exports = {
           100: "#B0D9B1",
         },
         muted: {
-          100: "#DEDEDE",
-          200: "#6C757D",
+          100: "#f9f9f9",
+          200: "#f1f1f1",
+          300: "#e3e3e3",
+          400: "#DEDEDE",
+          500: "#D2D2D2",
+          600: "#6C757D",
+        },
+        brown: {
+          100: "#FFE4AF",
         },
         accent: {
           700: "#FF9C34",
