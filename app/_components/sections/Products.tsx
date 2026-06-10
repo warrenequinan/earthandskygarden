@@ -9,6 +9,89 @@ import CategoryCard from "@/app/_components/ui/CategoryCard";
 import ProductSlider from "@/app/_components/ui/ProductSlider";
 
 const Products = () => {
+    const products = [
+      {
+        id: 1,
+        name: "Brocolli",
+        category: "Vegetables",
+        price: 75,
+        discount: 15,
+        image: "/products-thumbnail/Brocolli.png",
+      },
+      {
+        id: 2,
+        name: "Banana",
+        category: "Fruits",
+        price: 50,
+        discount: 0,
+        image: "/products-thumbnail/Banana.png",
+      },
+      {
+        id: 3,
+        name: "Carrot",
+        category: "Vegetables",
+        price: 100,
+        discount: 10,
+        image: "/products-thumbnail/Carrot.png",
+      },
+      {
+        id: 4,
+        name: "Cabbage",
+        category: "Vegetables",
+        price: 80,
+        discount: 0,
+        image: "/products-thumbnail/Cabbage.png",
+      },
+      {
+        id: 5,
+        name: "Tomato",
+        category: "Vegetables",
+        price: 25,
+        discount: 8,
+        image: "/products-thumbnail/Tomato.png",
+      },
+      {
+        id: 6,
+        name: "Chives",
+        category: "Vegetables",
+        price: 30,
+        discount: 0,
+        image: "/products-thumbnail/Chives.png",
+      },
+      {
+        id: 7,
+        name: "Eggplant",
+        category: "Vegetables",
+        price: 40,
+        discount: 3,
+        image: "/products-thumbnail/Eggplant.png",
+      },
+      {
+        id: 8,
+        name: "Mushroom",
+        category: "Vegetables",
+        price: 80,
+        discount: 0,
+        image: "/products-thumbnail/Mushroom.png",
+      },
+      {
+        id: 9,
+        name: "Porkchop",
+        category: "Meat",
+        price: 120,
+        discount: 0,
+        image: "/products-thumbnail/Porkchop.png",
+      },
+      {
+        id: 6,
+        name: "Chili",
+        category: "Vegetables",
+        price: 20,
+        discount: 0,
+        image: "/products-thumbnail/Chili.png",
+      },
+    ];
+
   return (
     <section className="w-full pb-[72px]">
       <div className="relative mx-auto max-w-[1320px] px-4 xl:px-0">
@@ -72,7 +155,7 @@ const Products = () => {
       <div className="mt-16">
         <SectionHeader align="center">Fresh Products</SectionHeader>
         <div className="mt-10 p-4">
-          <ProductSlider />
+          <ProductSlider products={products} />
         </div>
       </div>
     </section>
