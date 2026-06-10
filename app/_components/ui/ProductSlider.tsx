@@ -60,10 +60,10 @@ const ProductSlider = ({ products }: ProductSliderProps) => {
         modules={[Autoplay]}
         slidesPerView={1}
         spaceBetween={16}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           640: {
             slidesPerView: 2,
