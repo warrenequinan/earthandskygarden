@@ -11,6 +11,7 @@ import heroSlider2 from "@/public/hero-slider-2.png";
 import heroSlider3 from "@/public/hero-slider-3.png";
 import PaperOverlay from "@/app/_components/ui/PaperOverlay";
 import Button from "@/app/_components/ui/Button";
+import SliderBullet from "../ui/SliderBullet";
 
 const Hero = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -134,17 +135,14 @@ const Hero = () => {
                     </>
                   )}
                 </AnimatePresence>
-                <div className="mt-[104px] flex w-full justify-center gap-[8px] md:gap-[10px]">
-                  {slideItems.map((_, index) => (
-                    <span
-                      key={index}
-                      className="h-[12px] w-[12px] rounded-[3px] bg-white/50 data-[active=true]:bg-white md:h-[14px] md:w-[14px] md:rounded-[5px]"
-                      role="button"
-                      onClick={() => swiper?.slideTo(index)}
-                      data-active={index === activeSlider}
-                    ></span>
-                  ))}
-                </div>
+                <SliderBullet
+                  className="mt-[104px]"
+                  align="center"
+                  swiper={swiper}
+                  activeSlider={activeSlider}
+                  activeColor="bg-white"
+                  bulletColor="bg-white/50"
+                />
               </div>
             </div>
           </SwiperSlide>

@@ -7,9 +7,9 @@ import Button from "../ui/Button";
 
 const About = () => {
   return (
-    <section className="bg-muted-100 px-4 lg:px-0 max-w-[2560px] mx-auto">
+    <section className="mx-auto max-w-[2560px] bg-muted-100 px-4 lg:px-0 pb-10 lg:pb-0">
       <div className="relative flex flex-col lg:flex-row">
-        <div className="flex h-auto flex-1 flex-col items-center justify-center py-40 lg:min-h-[750px] lg:p-0">
+        <div className="flex h-auto flex-1 flex-col items-center justify-center py-10 lg:min-h-[750px] lg:p-0">
           <SectionHeader align="center">About Us</SectionHeader>
           <Description align="center" className="mt-6 max-w-[500px]">
             Rooted in a passion for agriculture and a commitment to quality, our
@@ -18,7 +18,7 @@ const About = () => {
           </Description>
           <Button className="mt-[40px]">Read more</Button>
         </div>
-        <div className="relative min-h-[400px] lg:min-h-[750px] lg:flex-1">
+        <div className="relative min-h-[400px] overflow-hidden rounded-[5px] sm:rounded-none lg:min-h-[750px] lg:flex-1">
           <Image
             src={aboutUsThumbnail}
             alt="eas about thumbnail"
@@ -31,7 +31,7 @@ const About = () => {
         </div>
       </div>
       <div className="relative flex flex-col lg:flex-row-reverse">
-        <div className="flex h-auto flex-1 flex-col items-center justify-center py-40 lg:min-h-[750px] lg:p-0">
+        <div className="mt-6 flex h-auto flex-1 flex-col items-center justify-center py-10 lg:mt-0 lg:min-h-[750px] lg:p-0">
           <SectionHeader align="center">Our Gallery</SectionHeader>
           <Description align="center" className="mt-6 max-w-[500px]">
             Rooted in a passion for agriculture and a commitment to quality, our
@@ -40,7 +40,7 @@ const About = () => {
           </Description>
           <Button className="mt-[40px]">View Gallery</Button>
         </div>
-        <div className="relative min-h-[400px] lg:min-h-[750px] lg:flex-1">
+        <div className="relative min-h-[400px] overflow-hidden rounded-[5px] sm:rounded-none lg:min-h-[750px] lg:flex-1">
           <Image
             src={galleryThumbnail}
             alt="eas gallery thumbnail"

@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutPropType) {
   return (
     <html
       lang="en"
-      className={`${roboto.className} h-full antialiased transition-all duration-300`}
+      className={`${roboto.className} h-full antialiased transition-all duration-300 overflow-x-hidden`}
     >
       <body className="relative">
         <Header />
