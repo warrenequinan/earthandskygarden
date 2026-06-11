@@ -18,7 +18,7 @@ const TestimonialItem = ({ customer }: TestimonialItemPropType) => {
 
   return (
     <CardContainer align="left" className="h-full p-6">
-      <Description align="left" className="mb-6">
+      <Description align="left" className="mb-6 max-w-full lg:max-w-[357px]">
         {testimonial}
       </Description>
       <div className="mt-auto flex items-center justify-start gap-4">
