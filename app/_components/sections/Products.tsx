@@ -120,7 +120,7 @@ const Products = () => {
             Vegetables
           </h3>
           <div className="z-10 mt-2">
-            <Button>Browse Products</Button>
+            <Button>Shop Vegetables</Button>
           </div>
         </CategoryCard>
 
@@ -132,7 +132,7 @@ const Products = () => {
             Fruits
           </h3>
           <div className="z-10 mt-2">
-            <Button>Browse Products</Button>
+            <Button>Shop Fruits</Button>
           </div>
         </CategoryCard>
 
@@ -148,12 +148,12 @@ const Products = () => {
             Meat & Poultry
           </h3>
           <div className="z-10 mt-2">
-            <Button>Browse Products</Button>
+            <Button>Shop Meat & Poultry</Button>
           </div>
         </CategoryCard>
       </div>
       <div className="mt-16">
-        <SectionHeader align="center">Featured Products</SectionHeader>
+        <SectionHeader align="center">Popular Products</SectionHeader>
         <div className="mt-10 p-4">
           <ProductSlider products={products} />
         </div>
