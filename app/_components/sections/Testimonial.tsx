@@ -5,7 +5,7 @@ import SectionHeader from "@/app/_components/ui/SectionHeader";
 import TestimonialSlider from "@/app/_components/ui/TestimonialSlider";
 import type { Swiper as SwiperType } from "swiper";
 import { useState } from "react";
-import SliderBullet from "../ui/SliderBullet";
+import SliderBullet from "@/app/_components/ui/SliderBullet";
 
 const Testimonial = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
