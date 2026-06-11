@@ -31,13 +31,11 @@ const SliderBullet = ({
           <span
             key={index}
             className={clsx(
-              "h-[12px] w-[12px] rounded-[3px] md:h-[14px] md:w-[14px] md:rounded-[5px]",
-              bulletColor,
-              activeColor && `data-[active=true]:${activeColor}`,
+              "h-[12px] w-[12px] rounded-[3px] md:h-[14px] md:w-[14px] md:rounded-[5px] transition-all duration-500",
+              index === activeSlider ? activeColor : bulletColor,
             )}
             role="button"
             onClick={() => swiper?.slideTo(index)}
-            data-active={index === activeSlider}
           ></span>
         ),
       )}

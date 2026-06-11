@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CustomerTestimonialType } from "@/app/_types/testimonial.type";
 import TestimonialItem from "./TestimonialItem";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
 type TestimonialSliderPropType = {
