@@ -99,7 +99,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="mx-6 mb-16 mt-16 max-w-[2560px] overflow-hidden lg:mt-[72px] xl:mx-auto">
+    <section className="mx-6 mt-16 max-w-[2560px] overflow-hidden lg:mt-[72px] xl:mx-auto">
       <div className="mx-auto flex max-w-[1320px] flex-col gap-4 lg:flex-row lg:gap-8">
         <div className="flex shrink-0 basis-full flex-col gap-8 lg:basis-[500px]">
           <SectionHeader align="left">Hear From Our Customers</SectionHeader>
