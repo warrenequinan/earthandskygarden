@@ -3,7 +3,8 @@ import { Roboto } from "next/font/google";
 import "swiper/css";
 import "@/app/_styles/globals.css";
 import "swiper/css/effect-fade";
-import Header from "./_components/sections/Header";
+import Header from "@/app/_components/sections/Header";
+import Footer from "@/app/_components/sections/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -34,11 +35,12 @@ export default function RootLayout({ children }: RootLayoutPropType) {
   return (
     <html
       lang="en"
-      className={`${roboto.className} h-full antialiased transition-all duration-300 overflow-x-hidden`}
+      className={`${roboto.className} h-full overflow-x-hidden antialiased transition-all duration-300`}
     >
       <body className="relative">
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
