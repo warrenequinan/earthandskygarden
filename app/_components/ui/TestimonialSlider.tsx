@@ -42,19 +42,16 @@ const TestimonialSlider = ({
         640: {
           slidesPerView: 2,
         },
+        768: {
+          slidesPerView: 3,
+        },
         1024: {
-          slidesPerView: 3,
-        },
-        1280: {
-          slidesPerView: 2,
-        },
-        1400: {
-          slidesPerView: 3,
+          slidesPerView: "auto",
         },
       }}
     >
       {customers.map((customer) => (
-        <SwiperSlide className="flex h-auto" key={customer.id}>
+        <SwiperSlide className="flex h-auto lg:!w-[400px]" key={customer.id}>
           <TestimonialItem customer={customer} />
         </SwiperSlide>
       ))}
