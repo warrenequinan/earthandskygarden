@@ -17,7 +17,7 @@ Customer Website
 
 The customer-facing website is built with Next.js and focuses on performance, responsiveness, and ease of use across desktop and mobile devices.
 
-Technologies
+Technologies:
 Next.js
 Supabase
 TanStack Query (React Query)
@@ -25,7 +25,8 @@ Zustand
 Framer Motion
 Vercel
 GitHub
-Planned Features
+
+Planned Features:
 Product catalog for vegetables, fruits, meat, and poultry
 Product categories and filtering
 Shopping cart functionality
@@ -35,16 +36,17 @@ Responsive design
 Smooth user interactions and animations
 Admin Dashboard
 
-A separate administration dashboard is being developed to help manage products, inventory, and customer orders.
+A separate administration dashboard is being planned to help manage products, inventory, and customer orders.
 
-Technologies
+Technologies:
 React
 Vite
 Supabase
 TanStack Query (React Query)
 Vercel
 GitHub
-Planned Features
+
+Planned Features:
 Product management
 Inventory management
 Order monitoring
@@ -52,7 +54,7 @@ Customer management
 Dashboard analytics and reporting
 Design Reference
 
-The platform is being developed based on the approved Figma design provided by the client.
+The customer facing e-commerce website of client is being developed based on the approved Figma design that was designed by me.
 
 Figma:
 https://www.figma.com/design/R8JIIpDq9gX0ZbuYQItoF1/Earth-and-Sky-Garden-Web-Redesign
