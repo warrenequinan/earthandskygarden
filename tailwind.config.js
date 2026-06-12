@@ -39,6 +39,7 @@ module.exports = {
         primary: "#0D3F4A",
         secondary: {
           100: "#B0D9B1",
+          200: "#204B54",
         },
         muted: {
           100: "#f9f9f9",

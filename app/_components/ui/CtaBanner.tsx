@@ -6,7 +6,7 @@ import ctaBackground from "@/public/eas-cta-background.jpg"
 
 const CtaBanner = () => {
   return (
-    <div className="relative flex h-[450px] lg:h-[644px] flex-col items-center justify-center text-center px-6">
+    <div className="relative flex h-auto py-20 lg:h-[644px] flex-col items-center justify-center text-center px-6 lg:py-0">
       <SectionHeader align="center" bar={false} className="mb-2 max-w-[964px]">
         We only provide fresh and <br className="hidden lg:block"  />
         high-quality products
@@ -18,7 +18,7 @@ const CtaBanner = () => {
       </Description>
       <Button>Order Now</Button>
       <div className="absolute w-full h-full -z-10">
-        <Image src={ctaBackground} alt="eas cta background" fill className="object-cover object-top" />
+        <Image src={ctaBackground} alt="eas cta background" fill className="object-cover object-top" quality={100} />
       </div>
     </div>
   );
