@@ -103,7 +103,12 @@ const Products = () => {
           that every item delivers freshness, flavor, and value you can trust.
         </Description>
         <div className="absolute right-0 top-0 hidden h-[250px] w-[250px] translate-x-[-300px] translate-y-[-50px] lg:block">
-          <Image fill src="/eas-arrow-design-1.svg" alt="eas arrow design 1" />
+          <Image
+            fill
+            src="/eas-arrow-design-1.svg"
+            alt="eas arrow design 1"
+            quality={100}
+          />
         </div>
       </div>
 
@@ -126,7 +131,12 @@ const Products = () => {
 
         <CategoryCard overlay="fruits">
           <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
-            <Image src={fruitsCategory} fill alt="fruit category thumbnail" />
+            <Image
+              src={fruitsCategory}
+              fill
+              alt="fruit category thumbnail"
+              quality={100}
+            />
           </div>
           <h3 className="z-10 text-2xl font-black uppercase text-primary">
             Fruits
@@ -142,6 +152,7 @@ const Products = () => {
               src={meatCategory}
               fill
               alt="meat and poultry category thumbnail"
+              quality={100}
             />
           </div>
           <h3 className="z-10 text-2xl font-black uppercase text-primary">

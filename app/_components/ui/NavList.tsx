@@ -12,12 +12,12 @@ const NavList = () => {
       <li
         className={`${navBaseStyle} ${pathname === "/" && "font-medium !text-accent-700"}`}
       >
-        <Link href="#">Home</Link>
+        <Link href="/">Home</Link>
       </li>
       <li
         className={`${navBaseStyle} ${pathname === "/products" && "font-medium !text-accent-700"}`}
       >
-        <Link href="#">Our Products</Link>
+        <Link href="/products">Our Products</Link>
       </li>
       <li
         className={`${navBaseStyle} ${pathname === "/about" && "font-medium !text-accent-700"}`}
