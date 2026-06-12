@@ -31,7 +31,7 @@ const SliderBullet = ({
           <span
             key={index}
             className={clsx(
-              "h-[12px] w-[12px] rounded-[3px] md:h-[14px] md:w-[14px] md:rounded-[5px] transition-all duration-500",
+              "h-[10px] w-[10px] rounded-[3px] md:h-[14px] md:w-[14px] md:rounded-[5px] transition-all duration-500",
               index === activeSlider ? activeColor : bulletColor,
             )}
             role="button"

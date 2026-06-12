@@ -69,7 +69,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative w-full px-6 uppercase xl:px-0">
+    <section className="relative w-full uppercase">
       <Swiper
         className="h-[100vh] min-h-[600px] w-full"
         modules={[EffectFade, Autoplay]}
@@ -94,7 +94,7 @@ const Hero = () => {
                 quality={100}
                 fill
               />
-              <div className="text-center">
+              <div className="px-4 text-center xl:px-0">
                 <AnimatePresence>
                   {index === activeSlider && (
                     <>
@@ -112,7 +112,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ duration: 0.7 }}
-                        className="mb-8 text-5xl font-black italic tracking-tight text-white md:text-6xl break-words"
+                        className="mb-8 text-4xl font-black italic tracking-tight text-white md:text-6xl"
                       >
                         {item?.title.before && item?.title?.before}
                         {item?.title?.highlight && (
