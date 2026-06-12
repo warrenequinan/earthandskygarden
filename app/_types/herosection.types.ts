@@ -6,7 +6,7 @@ export type HeroTitleType = {
 
 type BreadCrumbType = {
   name: string;
-  link: string;
+  link?: string;
 };
 
 export type HeroBreadcrumbType = BreadCrumbType[];

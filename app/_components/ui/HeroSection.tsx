@@ -50,7 +50,11 @@ const HeroSection = ({
                 className={`${index === breadcrumb.length - 1 ? "font-bold text-accent-700" : "after:ml-[10px] after:content-['/']"}`}
                 key={item.name}
               >
-                <Link href={item.link ?? "#"}>{item.name}</Link>
+                {index === breadcrumb.length - 1 ? (
+                  item.name
+                ) : (
+                  <Link href={item.link ?? "#"}>{item.name}</Link>
+                )}
               </li>
             ))}
           </ul>
