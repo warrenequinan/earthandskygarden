@@ -4,7 +4,7 @@ import Offer from "@/app/_components/sections/Offer";
 import Products from "@/app/_components/sections/Products";
 import Testimonial from "@/app/_components/sections/Testimonial";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Hero />

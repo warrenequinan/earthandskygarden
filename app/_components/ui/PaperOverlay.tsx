@@ -4,8 +4,6 @@ const PaperOverlay = () => {
       className="absolute bottom-0 z-30 object-cover"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      // width={1920}
-      // height={160}
       viewBox="0 0 1920 160"
       preserveAspectRatio="xMidYMid slice"
       fill="none"

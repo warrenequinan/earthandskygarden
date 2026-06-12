@@ -9,6 +9,10 @@ const NavButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
 
+  const handleCloseMenu = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (!navRef.current) return;
@@ -63,7 +67,7 @@ const NavButton = () => {
             transition={{ duration: 0.3 }}
             className="absolute right-0 top-[70px] w-[251px] overflow-hidden rounded-[5px] bg-white p-4 font-normal shadow-md"
           >
-            <NavList />
+            <NavList onCloseMenu={handleCloseMenu} />
           </motion.nav>
         )}
       </AnimatePresence>
