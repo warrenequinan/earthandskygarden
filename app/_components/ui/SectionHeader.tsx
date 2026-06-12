@@ -24,7 +24,7 @@ const SectionHeader = ({
         className,
       )}
     >
-      <h3 className="text-5xl font-black uppercase italic tracking-tight text-primary md:text-6xl">
+      <h3 className="text-4xl font-black uppercase italic tracking-tight text-primary md:text-6xl">
         {children}
       </h3>
       {bar && (
