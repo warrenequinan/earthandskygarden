@@ -34,8 +34,8 @@ const HeroSection = ({
             <span
               className={clsx(
                 "text-accent-700",
-                before && "ml-4",
-                after && "mr-4",
+                before && "ml-2",
+                after && "mr-2",
               )}
             >
               {highlight}

@@ -117,7 +117,7 @@ const Hero = () => {
                         {item?.title.before && item?.title?.before}
                         {item?.title?.highlight && (
                           <span
-                            className={`${item?.title?.before && "ml-4"} ${item?.title?.after && "mr-4"} text-accent-700`}
+                            className={`${item?.title?.before && "ml-2"} ${item?.title?.after && "mr-2"} text-accent-700`}
                           >
                             {item.title.highlight}
                           </span>
