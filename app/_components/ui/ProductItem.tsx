@@ -22,6 +22,7 @@ const ProductItem = ({ product }: ProductItemType) => {
           className="object-contain transition-all duration-[400ms] group-hover:scale-110"
           src={image}
           fill
+          quality={100}
           alt={`eas ${name.toLowerCase()} product thumbnail`}
         />
       </div>
