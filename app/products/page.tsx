@@ -7,10 +7,7 @@ const Products = () => {
     after: "From the farm",
   };
 
-  const breadcrumb = [
-    { name: "Home", link: "/" },
-    { name: "Products", link: "" },
-  ];
+  const breadcrumb = [{ name: "Home", link: "/" }, { name: "Products" }];
 
   return (
     <HeroSection
