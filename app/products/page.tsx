@@ -29,7 +29,7 @@ const Products = () => {
         background="/eas-products-page-hero-image.jpg"
       />
       <SectionContainer>
-        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8 px-6 lg:px-0">
+        <div className="grid grid-cols-1 gap-8 px-6 lg:grid-cols-[300px_1fr] lg:px-0">
           <div>
             <div className="border-b border-muted-500 pb-6">
               <div className="flex items-center gap-2">
@@ -39,21 +39,31 @@ const Products = () => {
                 </h5>
               </div>
               <div className="mt-6 inline-block">
-                <span className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary">
+                <button
+                  className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary"
+                >
                   <HiXMark strokeWidth={3} /> vegetables
-                </span>
-                <span className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary">
+                </button>
+                <button
+                  className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary"
+                >
                   <HiXMark strokeWidth={3} /> meat
-                </span>
-                <span className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary">
+                </button>
+                <button
+                  className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary"
+                >
                   <HiXMark strokeWidth={3} /> poultry
-                </span>
-                <span className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary">
+                </button>
+                <button
+                  className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary"
+                >
                   <HiXMark strokeWidth={3} /> mushrooms
-                </span>
-                <span className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary">
+                </button>
+                <button
+                  className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary"
+                >
                   <HiXMark strokeWidth={3} /> ₱ 0.00 ─ ₱ 25.00
-                </span>
+                </button>
               </div>
             </div>
             <div className="border-b border-muted-500 pb-6 pt-6">
