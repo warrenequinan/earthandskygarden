@@ -29,7 +29,7 @@ const Products = () => {
         background="/eas-products-page-hero-image.jpg"
       />
       <SectionContainer>
-        <div className="grid grid-cols-[300px_1fr] gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8 px-6 lg:px-0">
           <div>
             <div className="border-b border-muted-500 pb-6">
               <div className="flex items-center gap-2">
