@@ -1,14 +1,16 @@
+import { HiSortAscending, HiViewGrid } from "react-icons/hi";
+
 const ProductsSort = () => {
   return (
     <div className="flex items-center">
       <div>
-        <fieldset className="flex items-start gap-2 md:gap-8 flex-col md:flex-row">
+        <fieldset className="flex flex-col items-start gap-2 md:flex-row md:gap-8">
           <div className="relative flex items-center gap-4">
             <label
               htmlFor="numItems"
-              className="text-lg font-bold text-primary"
+              className="flex items-center gap-2 text-lg font-bold uppercase leading-none text-primary"
             >
-              Show:
+              <HiViewGrid className="text-[22px]" /> Show:
             </label>
             <select className="h-8 w-16 appearance-none rounded-[5px] bg-muted-500 px-4 text-[13px] font-normal text-muted-700 outline-accent-700">
               <option value={6}>6</option>
@@ -25,9 +27,9 @@ const ProductsSort = () => {
           <div className="relative flex items-center gap-4">
             <label
               htmlFor="numItems"
-              className="text-lg font-bold text-primary"
+              className="flex items-center gap-2 text-lg font-bold uppercase leading-none text-primary"
             >
-              Sort by:
+              <HiSortAscending className="text-[22px]" /> Sort By:
             </label>
             <select className="h-8 appearance-none rounded-[5px] bg-muted-500 px-4 text-[13px] font-normal text-muted-700 outline-accent-700">
               <option value={12} selected>
