@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import type { Swiper as SwiperType } from "swiper";
+import { motion } from "motion/react";
 
 type SliderBulletType = {
   swiper: SwiperType | null;
@@ -19,7 +20,11 @@ const SliderBullet = ({
   bulletColor,
 }: SliderBulletType) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
       className={clsx(
         "flex w-full gap-[8px] md:gap-[10px]",
         align === "left" ? "justify-start" : "justify-center",
@@ -31,7 +36,7 @@ const SliderBullet = ({
           <span
             key={index}
             className={clsx(
-              "h-[10px] w-[10px] rounded-[3px] md:h-[14px] md:w-[14px] md:rounded-[5px] transition-all duration-500",
+              "h-[10px] w-[10px] rounded-[3px] transition-all duration-500 md:h-[14px] md:w-[14px] md:rounded-[5px]",
               index === activeSlider ? activeColor : bulletColor,
             )}
             role="button"
@@ -39,7 +44,7 @@ const SliderBullet = ({
           ></span>
         ),
       )}
-    </div>
+    </motion.div>
   );
 };
 

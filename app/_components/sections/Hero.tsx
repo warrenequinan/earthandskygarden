@@ -3,7 +3,14 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCards,
+  EffectCreative,
+  EffectCube,
+  EffectFade,
+  EffectFlip,
+} from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import heroSlider1 from "@/public/eas-hero-slider-1.png";
@@ -16,6 +23,7 @@ import Link from "next/link";
 const Hero = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [activeSlider, setActiveSlider] = useState(0);
+  const [renderSlider, setRenderSlider] = useState(0);
 
   const slideItems = [
     {
@@ -72,8 +80,8 @@ const Hero = () => {
     <section className="relative w-full uppercase">
       <Swiper
         className="h-[100vh] min-h-[600px] w-full"
-        modules={[EffectFade, Autoplay]}
-        effect="fade"
+        modules={[Autoplay]}
+        // effect="creative"
         slidesPerView={1}
         autoplay={{
           delay: 3000,
@@ -82,6 +90,9 @@ const Hero = () => {
         speed={1000}
         onSwiper={setSwiper}
         onSlideChange={(s) => setActiveSlider(s.activeIndex)}
+        onSlideChangeTransitionEnd={(s) => {
+          setRenderSlider(s.activeIndex);
+        }}
       >
         {slideItems.map((item, index) => (
           <SwiperSlide key={index}>
@@ -95,14 +106,14 @@ const Hero = () => {
                 fill
               />
               <div className="px-4 text-center xl:px-0">
-                <AnimatePresence>
-                  {index === activeSlider && (
+                <AnimatePresence mode="wait">
+                  {index === renderSlider && (
                     <>
                       <motion.h3
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -50 }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.8 }}
                         className="text-base text-white md:text-lg"
                       >
                         {item?.subText}
@@ -111,7 +122,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -50 }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
                         className="mb-8 text-4xl font-black italic tracking-tight text-white md:text-6xl"
                       >
                         {item?.title.before && item?.title?.before}
@@ -128,7 +139,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.7, delay: 0.6 }}
                       >
                         <Link
                           href={item.button.url ?? "#"}
@@ -137,17 +148,17 @@ const Hero = () => {
                           {item?.button?.text}
                         </Link>
                       </motion.div>
+                      <SliderBullet
+                        className="mt-[104px]"
+                        align="center"
+                        swiper={swiper}
+                        activeSlider={activeSlider}
+                        activeColor="bg-white"
+                        bulletColor="bg-white/50"
+                      />
                     </>
                   )}
                 </AnimatePresence>
-                <SliderBullet
-                  className="mt-[104px]"
-                  align="center"
-                  swiper={swiper}
-                  activeSlider={activeSlider}
-                  activeColor="bg-white"
-                  bulletColor="bg-white/50"
-                />
               </div>
             </div>
           </SwiperSlide>

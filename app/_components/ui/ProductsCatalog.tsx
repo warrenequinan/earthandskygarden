@@ -15,10 +15,13 @@ const ProductsCatalog = ({ products }: ProductsCatalogPropType) => {
         </p>
         <ProductsSort />
       </div>
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {products.map((item) => (
           <ProductItem product={item} key={item.id} />
         ))}
+      </div>
+      <div className="mt-8">
+        <p>Pagination</p>
       </div>
     </div>
   );
