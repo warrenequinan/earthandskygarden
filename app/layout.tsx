@@ -15,8 +15,8 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: {
-    template: "Earth and Skygarden | %s",
-    default: "Earth and Skygarden | Home",
+    template: "%s — Earth and Skygarden",
+    default: "Home — Earth and Skygarden",
   },
   description:
     "Rooted in a passion for agriculture and a commitment to quality, our farm specializes in producing fresh vegetables, premium mushrooms, and quality livestock products",
