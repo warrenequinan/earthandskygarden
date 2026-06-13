@@ -13,7 +13,7 @@ const ProductsFilter = () => {
     <>
       <div className="border-b border-muted-500 pb-6 pt-6">
         <div className="flex items-center gap-2">
-          <h5 className="text-lg font-bold uppercase text-primary">
+          <h5 className="text-lg font-semibold text-primary">
             Categories:
           </h5>
         </div>
@@ -21,7 +21,7 @@ const ProductsFilter = () => {
       </div>
       <div className="pb-0 lg:pb-6 pt-6">
         <div className="flex items-center gap-2">
-          <h5 className="text-lg font-bold uppercase text-primary">Price:</h5>
+          <h5 className="text-lg font-semibold text-primary">Price:</h5>
         </div>
 
         <div className="mt-4 border-b border-muted-500 lg:border-none pb-6">

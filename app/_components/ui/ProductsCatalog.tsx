@@ -1,6 +1,7 @@
 import { Product } from "@/app/_types/product.types";
-import ProductsSort from "./ProductsSort";
-import ProductItem from "./ProductItem";
+import ProductsSort from "@/app/_components/ui/ProductsSort";
+import ProductItem from "@/app/_components/ui/ProductItem";
+import Pagination from "@/app/_components/ui/Pagination";
 
 type ProductsCatalogPropType = {
   products: Product[];
@@ -22,6 +23,7 @@ const ProductsCatalog = ({ products }: ProductsCatalogPropType) => {
           Showing <span className="text-accent-700">1 to 12</span> of products
           results
         </p>
+        <Pagination />
       </div>
     </div>
   );
