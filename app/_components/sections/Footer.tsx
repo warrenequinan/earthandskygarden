@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mx-auto mt-6 flex max-w-[1320px] flex-col gap-8 text-center text-lg font-medium uppercase text-white">
-          <div className="bg-secondary-200 h-[1px] w-full"></div>
+          <div className="bg-secondary-300 h-[1px] w-full"></div>
           <p>&#169; 2026 Earth and Sky Garden | All right reserved</p>
         </div>
       </div>

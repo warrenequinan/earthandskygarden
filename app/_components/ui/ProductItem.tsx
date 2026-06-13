@@ -32,7 +32,7 @@ const ProductItem = ({ product }: ProductItemType) => {
           ? `₱ ${(price - discountedPrice).toFixed(2)} / kg`
           : `₱ ${price.toFixed(2)} / kg`}
         {discount > 0 && (
-          <span className="ml-[10px] text-muted-600 line-through">
+          <span className="ml-[10px] text-muted-700 line-through">
             ₱ {price.toFixed(2)}
           </span>
         )}
