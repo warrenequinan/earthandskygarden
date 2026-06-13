@@ -16,6 +16,7 @@ const CategoryFilter = ({ category }: CategoryFilterPropType) => {
           key={item.name}
         >
           <input
+            id={item.name}
             className="peer hidden"
             type="checkbox"
             name={item.name}
