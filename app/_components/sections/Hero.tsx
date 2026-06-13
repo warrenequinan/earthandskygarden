@@ -10,7 +10,6 @@ import heroSlider1 from "@/public/eas-hero-slider-1.png";
 import heroSlider2 from "@/public/hero-slider-2.png";
 import heroSlider3 from "@/public/hero-slider-3.png";
 import PaperOverlay from "@/app/_components/ui/PaperOverlay";
-import Button from "@/app/_components/ui/Button";
 import SliderBullet from "../ui/SliderBullet";
 import Link from "next/link";
 
@@ -133,7 +132,7 @@ const Hero = () => {
                       >
                         <Link
                           href={item.button.url ?? "#"}
-                          className="mx-auto flex-inline items-center justify-center gap-[10px] rounded-[5px] bg-accent-700 px-4 py-3 !text-sm font-semibold uppercase text-white transition-colors hover:bg-accent-800 md:px-5 md:py-4 md:text-base"
+                          className="flex-inline mx-auto items-center justify-center gap-[10px] rounded-[5px] bg-accent-700 px-4 py-3 !text-sm font-semibold uppercase text-white transition-colors hover:bg-accent-800 md:px-5 md:py-4 md:text-base"
                         >
                           {item?.button?.text}
                         </Link>
