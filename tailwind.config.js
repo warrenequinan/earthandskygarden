@@ -31,9 +31,18 @@ module.exports = {
             transform: "translateX(0)",
           },
         },
+        bounceLogo: {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-12px)",
+          },
+        },
       },
       animation: {
         truckAnim: "truckLoop 350ms linear",
+        bounceLogo: "bounceLogo 0.4s ease-in-out infinite",
       },
       colors: {
         primary: "#0D3F4A",

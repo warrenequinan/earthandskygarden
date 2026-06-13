@@ -5,7 +5,8 @@ import { motion } from "motion/react";
 const Loader = () => {
   return (
     <motion.div
-      animate={{ y: [0, -12, 0] }}
+      initial={{ opacity: 0, y: 0 }}
+      animate={{ y: [0, -12, 0], opacity: 1 }}
       transition={{
         duration: 0.4,
         repeat: Infinity,
