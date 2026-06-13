@@ -12,6 +12,7 @@ import heroSlider3 from "@/public/hero-slider-3.png";
 import PaperOverlay from "@/app/_components/ui/PaperOverlay";
 import Button from "@/app/_components/ui/Button";
 import SliderBullet from "../ui/SliderBullet";
+import Link from "next/link";
 
 const Hero = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -27,7 +28,7 @@ const Hero = () => {
       subText: "Welcome to",
       button: {
         text: "Browse Our Products",
-        url: "",
+        url: "/products",
       },
       backgroundImage: {
         url: heroSlider1,
@@ -130,7 +131,12 @@ const Hero = () => {
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ duration: 0.7 }}
                       >
-                        <Button size="default">{item?.button?.text}</Button>
+                        <Link
+                          href={item.button.url ?? "#"}
+                          className="mx-auto flex-inline items-center justify-center gap-[10px] rounded-[5px] bg-accent-700 px-4 py-3 !text-sm font-semibold uppercase text-white transition-colors hover:bg-accent-800 md:px-5 md:py-4 md:text-base"
+                        >
+                          {item?.button?.text}
+                        </Link>
                       </motion.div>
                     </>
                   )}

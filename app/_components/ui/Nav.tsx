@@ -12,7 +12,7 @@ const Nav = ({ isScrolled }: NavPropType) => {
     <div className="flex items-center gap-4">
       <Button size="default">
         <HiUser className="text-[20px] leading-none" />{" "}
-        <span className="hidden md:inline">Login / Sign up</span>
+        <span className="hidden leading-none md:inline">Login / Sign up</span>
       </Button>
       <CartButton isScrolled={isScrolled} />
       <NavButton />
