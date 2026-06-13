@@ -20,8 +20,11 @@ const ProductsCatalog = ({ products }: ProductsCatalogPropType) => {
           <ProductItem product={item} key={item.id} />
         ))}
       </div>
-      <div className="mt-8">
-        <p>Pagination</p>
+      <div className="mt-8 flex items-center justify-between">
+        <p className="md:0 mt-4 text-base font-bold text-primary">
+          Showing <span className="text-accent-700">1 to 12</span> of products
+          results
+        </p>
       </div>
     </div>
   );
