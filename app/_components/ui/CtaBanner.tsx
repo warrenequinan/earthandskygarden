@@ -16,7 +16,7 @@ const CtaBanner = () => {
         we ensure that every product meets the highest standards of freshness,
         safety, and excellence.
       </Description>
-      <Button>Order Now</Button>
+      <Button size="default">Order Now</Button>
       <div className="absolute w-full h-full -z-10">
         <Image src={ctaBackground} alt="eas cta background" fill className="object-cover object-top" quality={100} />
       </div>

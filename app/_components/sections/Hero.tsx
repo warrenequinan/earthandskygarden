@@ -130,7 +130,7 @@ const Hero = () => {
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ duration: 0.7 }}
                       >
-                        <Button>{item?.button?.text}</Button>
+                        <Button size="default">{item?.button?.text}</Button>
                       </motion.div>
                     </>
                   )}

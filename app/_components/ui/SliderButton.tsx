@@ -31,7 +31,7 @@ const SliderButton = ({
     >
       <button
         disabled={isBeginning}
-        className="duration-300 rounded-[5px] group bg-muted-200 px-4 py-3 text-3xl text-primary transition-all disabled:cursor-not-allowed disabled:bg-muted-100 disabled:text-muted-500"
+        className="duration-300 rounded-[5px] group bg-muted-200 px-4 py-3 text-3xl text-primary transition-all disabled:cursor-not-allowed disabled:bg-muted-100 disabled:text-muted-700"
         onClick={() => swiper?.slidePrev()}
       >
         <HiChevronLeft
@@ -44,7 +44,7 @@ const SliderButton = ({
 
       <button
         disabled={isEnd}
-        className="group rounded-[5px] bg-muted-200 px-4 py-3 text-3xl text-primary disabled:cursor-not-allowed disabled:bg-muted-100 disabled:text-muted-500"
+        className="group rounded-[5px] bg-muted-200 px-4 py-3 text-3xl text-primary disabled:cursor-not-allowed disabled:bg-muted-100 disabled:text-muted-700"
         onClick={() => swiper?.slideNext()}
       >
         <HiChevronRight
