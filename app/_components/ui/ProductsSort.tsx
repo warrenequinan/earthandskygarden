@@ -2,7 +2,7 @@ const ProductsSort = () => {
   return (
     <div className="flex items-center">
       <div>
-        <fieldset className="flex items-center gap-8">
+        <fieldset className="flex items-start gap-2 md:gap-8 flex-col md:flex-row">
           <div className="relative flex items-center gap-4">
             <label
               htmlFor="numItems"
