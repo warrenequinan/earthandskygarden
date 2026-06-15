@@ -6,6 +6,7 @@ import {
   HiOutlineShoppingBag,
 } from "react-icons/hi";
 import type { Product } from "@/app/_types/product.types";
+import Link from "next/link";
 
 type ProductItemType = {
   product: Product;
@@ -51,12 +52,15 @@ const ProductItem = ({ product }: ProductItemType) => {
             />
           </button>
           <div className="mx-3 h-[14px] w-[0.5px] bg-white opacity-50"></div>
-          <button className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100">
+          <Link
+            href="/products/testproduct"
+            className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100"
+          >
             <HiOutlineEye
               strokeWidth={2}
               className="absolute h-full w-full p-2"
             />
-          </button>
+          </Link>
           <div className="mx-3 h-[14px] w-[0.5px] bg-white opacity-50"></div>
           <button className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100">
             <HiOutlineHeart

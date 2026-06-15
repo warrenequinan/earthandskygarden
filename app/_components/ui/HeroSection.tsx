@@ -10,7 +10,7 @@ import {
 type HeroSectionPropType = {
   title: HeroTitleType;
   breadcrumb: HeroBreadcrumbType;
-  background: string;
+  background: { url: string; alt: string };
 };
 
 const HeroSection = ({
@@ -62,9 +62,9 @@ const HeroSection = ({
       </div>
       {background && (
         <Image
-          src={background}
+          src={background.url}
           fill
-          alt="eas products page hero image"
+          alt={background.alt}
           className="-z-20 object-cover"
           quality={100}
         />

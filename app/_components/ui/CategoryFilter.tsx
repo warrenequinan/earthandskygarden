@@ -22,7 +22,7 @@ const CategoryFilter = ({ category }: CategoryFilterPropType) => {
             name={item.name}
             value={item.name}
           />
-          <div className="flex h-[14px] w-[14px] items-center justify-center rounded border border-muted-500 transition peer-checked:border-accent-700 peer-checked:bg-accent-700">
+          <div className="peer-checked:text-acc flex h-[14px] w-[14px] items-center justify-center rounded border border-muted-500 transition duration-300 peer-checked:border-accent-700 peer-checked:bg-accent-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -38,7 +38,9 @@ const CategoryFilter = ({ category }: CategoryFilterPropType) => {
               />
             </svg>
           </div>
-          {item.placeholder}
+          <span className="transition duration-300 peer-checked:text-accent-700">
+            {item.placeholder}
+          </span>
         </label>
       ))}
     </fieldset>
