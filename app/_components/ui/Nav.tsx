@@ -10,7 +10,7 @@ type NavPropType = {
 const Nav = ({ isScrolled }: NavPropType) => {
   return (
     <div className="flex items-center gap-4">
-      <Button size="default">
+      <Button size="default" variant="primary">
         <HiUser className="text-[20px] leading-none" />{" "}
         <span className="hidden leading-none md:inline">Login / Sign up</span>
       </Button>
