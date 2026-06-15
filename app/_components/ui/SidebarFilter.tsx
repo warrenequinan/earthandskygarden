@@ -30,7 +30,7 @@ const SidebarFilter = () => {
         </div>
       </div>
       <div className="border-b border-muted-500 pb-6 pt-6">
-        <Button size="small">
+        <Button size="small" variant="primary">
           <span className="flex items-center gap-1">
             <HiTrash className="text-[15px] text-accent-600" /> Clear All
           </span>
