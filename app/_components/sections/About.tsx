@@ -16,7 +16,7 @@ const About = () => {
             farm specializes in producing fresh vegetables, premium mushrooms,
             and quality livestock products...
           </Description>
-          <Button className="mt-[40px]" size="default">
+          <Button className="mt-[40px]" size="default" variant="primary">
             Read more
           </Button>
         </div>
@@ -40,7 +40,7 @@ const About = () => {
             farm specializes in producing fresh vegetables, premium mushrooms,
             and quality livestock products...
           </Description>
-          <Button className="mt-[40px]" size="default">
+          <Button className="mt-[40px]" size="default" variant="primary">
             View Gallery
           </Button>
         </div>
