@@ -27,16 +27,16 @@ const productTemp = {
   sku: "carrot-1kg",
   images: [
     {
-      url: "/products-gallery/eas-vegetable-carrot.png",
-      alt: "eas-products-carrot",
+      url: "/products-gallery/carrot-1.png",
+      alt: "eas products carrot 1",
     },
     {
-      url: "/products-gallery/eas-vegetable-carrot.png",
-      alt: "eas-products-carrot",
+      url: "/products-gallery/carrot-2.png",
+      alt: "eas products carrot 2",
     },
     {
-      url: "/products-gallery/eas-vegetable-carrot.png",
-      alt: "eas-products-carrot",
+      url: "/products-gallery/carrot-3.png",
+      alt: "eas products carrot 3",
     },
   ],
 };
