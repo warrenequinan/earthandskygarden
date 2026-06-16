@@ -1,32 +1,32 @@
-    import { Product } from "@/app/_types/product.types";
-    import ProductsSort from "@/app/_components/ui/ProductsSort";
-    import ProductItem from "@/app/_components/ui/ProductItem";
-    import Pagination from "@/app/_components/ui/Pagination";
+import { ProductsCatalogType } from "@/app/_types/product.types";
+import ProductsSort from "@/app/_components/ui/ProductsSort";
+import ProductItem from "@/app/_components/ui/ProductItem";
+import Pagination from "@/app/_components/ui/Pagination";
 
-    type ProductsCatalogPropType = {
-    products: Product[];
-    };
+type ProductsCatalogPropType = {
+  products: ProductsCatalogType[];
+};
 
-    const ProductsCatalog = ({ products }: ProductsCatalogPropType) => {
-    return (
-        <div>
-        <div className="flex flex-col-reverse items-start justify-end gap-4 md:flex-row md:items-center">
-            <ProductsSort />
-        </div>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {products.map((item) => (
-            <ProductItem product={item} key={item.id} />
-            ))}
-        </div>
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-base font-bold text-primary">
-            Showing <span className="text-accent-700">1 to 12 of 24 </span>
-            products results
-            </p>
-            <Pagination />
-        </div>
-        </div>
-    );
-    };
+const ProductsCatalog = ({ products }: ProductsCatalogPropType) => {
+  return (
+    <div>
+      <div className="flex flex-col-reverse items-start justify-end gap-4 md:flex-row md:items-center">
+        <ProductsSort />
+      </div>
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {products.map((item) => (
+          <ProductItem product={item} key={item.id} />
+        ))}
+      </div>
+      <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p className="text-base font-bold text-primary">
+          Showing <span className="text-accent-700">1 to 12 of 24 </span>
+          products results
+        </p>
+        <Pagination />
+      </div>
+    </div>
+  );
+};
 
-    export default ProductsCatalog;
+export default ProductsCatalog;

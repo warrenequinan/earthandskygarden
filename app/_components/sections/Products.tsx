@@ -12,27 +12,57 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: "Brocolli",
-      category: "Vegetables",
-      price: 75,
-      discount: 15,
-      image: "/products-thumbnail/Brocolli.png",
-    },
-    {
-      id: 2,
-      name: "Banana",
-      category: "Fruits",
-      price: 50,
-      discount: 0,
-      image: "/products-thumbnail/Banana.png",
-    },
-    {
-      id: 3,
       name: "Carrot",
       category: "Vegetables",
       price: 100,
       discount: 10,
-      image: "/products-thumbnail/Carrot.png",
+      slug: "carrot",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Carrot.png",
+          alt: "Carrot",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Brocolli",
+      category: "Vegetables",
+      price: 100,
+      discount: 0,
+      slug: "brocolli",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Brocolli.png",
+          alt: "Brocolli",
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Banana",
+      category: "Fruits",
+      price: 50,
+      discount: 8,
+      slug: "banana",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Banana.png",
+          alt: "Banana",
+        },
+      ],
     },
     {
       id: 4,
@@ -40,7 +70,17 @@ const Products = () => {
       category: "Vegetables",
       price: 80,
       discount: 0,
-      image: "/products-thumbnail/Cabbage.png",
+      slug: "cabbage",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Cabbage.png",
+          alt: "Cabbage",
+        },
+      ],
     },
     {
       id: 5,
@@ -48,47 +88,89 @@ const Products = () => {
       category: "Vegetables",
       price: 25,
       discount: 8,
-      image: "/products-thumbnail/Tomato.png",
+      slug: "tomato",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Tomato.png",
+          alt: "Tomato",
+        },
+      ],
     },
     {
       id: 6,
-      name: "Chives",
-      category: "Vegetables",
+      name: "Porkchop",
+      category: "Meat",
       price: 30,
       discount: 0,
-      image: "/products-thumbnail/Chives.png",
+      slug: "porkchop",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Porkchop.png",
+          alt: "Porkchop",
+        },
+      ],
     },
     {
       id: 7,
-      name: "Eggplant",
+      name: "Bell Pepper",
       category: "Vegetables",
-      price: 40,
-      discount: 3,
-      image: "/products-thumbnail/Eggplant.png",
+      price: 35,
+      discount: 20,
+      slug: "bell-pepper",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Bell-pepper.png",
+          alt: "Bell Pepper",
+        },
+      ],
     },
     {
       id: 8,
-      name: "Mushroom",
+      name: "Chives",
       category: "Vegetables",
-      price: 80,
+      price: 50,
       discount: 0,
-      image: "/products-thumbnail/Mushroom.png",
+      slug: "chives",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Chives.png",
+          alt: "Chives",
+        },
+      ],
     },
     {
       id: 9,
-      name: "Porkchop",
-      category: "Meat",
-      price: 120,
-      discount: 10,
-      image: "/products-thumbnail/Porkchop.png",
-    },
-    {
-      id: 10,
-      name: "Chili",
+      name: "Patola",
       category: "Vegetables",
-      price: 20,
-      discount: 0,
-      image: "/products-thumbnail/Chili.png",
+      price: 25,
+      discount: 3,
+      slug: "patola",
+      unit: {
+        value: 1,
+        type: "kg",
+      },
+      images: [
+        {
+          url: "/products-thumbnail/Patola.png",
+          alt: "Patola",
+        },
+      ],
     },
   ];
 

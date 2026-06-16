@@ -5,11 +5,11 @@ import {
   HiOutlineHeart,
   HiOutlineShoppingBag,
 } from "react-icons/hi";
-import type { Products } from "@/app/_types/product.types";
+import type { ProductsCatalogType } from "@/app/_types/product.types";
 import Link from "next/link";
 
 type ProductItemType = {
-  product: Products;
+  product: ProductsCatalogType;
 };
 
 const ProductItem = ({ product }: ProductItemType) => {
@@ -30,7 +30,7 @@ const ProductItem = ({ product }: ProductItemType) => {
       <h5 className="text-xl font-bold uppercase text-primary">{name}</h5>
       <p className="text-base text-primary">
         {discount > 0
-          ? `₱ ${(price - discountedPrice).toFixed(2)} / kg`
+          ? `₱ ${(price - discountedPrice).toFixed(2)} / ${product.unit.type}`
           : `₱ ${price.toFixed(2)} / kg`}
         {discount > 0 && (
           <span className="ml-[10px] text-muted-700 line-through">

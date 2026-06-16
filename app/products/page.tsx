@@ -22,104 +22,224 @@ const Page = () => {
     alt: "eas products page hero image",
   };
 
-  const products = [
-    {
-      id: 1,
-      name: "Carrot",
-      category: "Vegetables",
-      price: 100,
-      discount: 10,
-      image: "/products-thumbnail/Carrot.png",
+const products = [
+  {
+    id: 1,
+    name: "Carrot",
+    category: "Vegetables",
+    price: 100,
+    discount: 10,
+    slug: "carrot",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 2,
-      name: "Brocolli",
-      category: "Vegetables",
-      price: 100,
-      discount: 0,
-      image: "/products-thumbnail/Brocolli.png",
+    images: [
+      {
+        url: "/products-thumbnail/Carrot.png",
+        alt: "Carrot",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Brocolli",
+    category: "Vegetables",
+    price: 100,
+    discount: 0,
+    slug: "brocolli",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 3,
-      name: "Banana",
-      category: "Fruits",
-      price: 50,
-      discount: 8,
-      image: "/products-thumbnail/Banana.png",
+    images: [
+      {
+        url: "/products-thumbnail/Brocolli.png",
+        alt: "Brocolli",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Banana",
+    category: "Fruits",
+    price: 50,
+    discount: 8,
+    slug: "banana",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 4,
-      name: "Cabbage",
-      category: "Vegetables",
-      price: 80,
-      discount: 0,
-      image: "/products-thumbnail/Cabbage.png",
+    images: [
+      {
+        url: "/products-thumbnail/Banana.png",
+        alt: "Banana",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Cabbage",
+    category: "Vegetables",
+    price: 80,
+    discount: 0,
+    slug: "cabbage",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 5,
-      name: "Tomato",
-      category: "Vegetables",
-      price: 25,
-      discount: 8,
-      image: "/products-thumbnail/Tomato.png",
+    images: [
+      {
+        url: "/products-thumbnail/Cabbage.png",
+        alt: "Cabbage",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "Tomato",
+    category: "Vegetables",
+    price: 25,
+    discount: 8,
+    slug: "tomato",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 6,
-      name: "Porkchop",
-      category: "Meat",
-      price: 30,
-      discount: 0,
-      image: "/products-thumbnail/Porkchop.png",
+    images: [
+      {
+        url: "/products-thumbnail/Tomato.png",
+        alt: "Tomato",
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Porkchop",
+    category: "Meat",
+    price: 30,
+    discount: 0,
+    slug: "porkchop",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 7,
-      name: "Bell Pepper",
-      category: "Vegetables",
-      price: 35,
-      discount: 20,
-      image: "/products-thumbnail/Bell-pepper.png",
+    images: [
+      {
+        url: "/products-thumbnail/Porkchop.png",
+        alt: "Porkchop",
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "Bell Pepper",
+    category: "Vegetables",
+    price: 35,
+    discount: 20,
+    slug: "bell-pepper",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 8,
-      name: "Chives",
-      category: "Vegetables",
-      price: 50,
-      discount: 0,
-      image: "/products-thumbnail/Chives.png",
+    images: [
+      {
+        url: "/products-thumbnail/Bell-pepper.png",
+        alt: "Bell Pepper",
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "Chives",
+    category: "Vegetables",
+    price: 50,
+    discount: 0,
+    slug: "chives",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 9,
-      name: "Patola",
-      category: "Vegetables",
-      price: 25,
-      discount: 3,
-      image: "/products-thumbnail/Patola.png",
+    images: [
+      {
+        url: "/products-thumbnail/Chives.png",
+        alt: "Chives",
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "Patola",
+    category: "Vegetables",
+    price: 25,
+    discount: 3,
+    slug: "patola",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 10,
-      name: "Pechay",
-      category: "Vegetables",
-      price: 40,
-      discount: 0,
-      image: "/products-thumbnail/Pechay.png",
+    images: [
+      {
+        url: "/products-thumbnail/Patola.png",
+        alt: "Patola",
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: "Pechay",
+    category: "Vegetables",
+    price: 40,
+    discount: 0,
+    slug: "pechay",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 11,
-      name: "Okra",
-      category: "Vegetables",
-      price: 35,
-      discount: 10,
-      image: "/products-thumbnail/Okra.png",
+    images: [
+      {
+        url: "/products-thumbnail/Pechay.png",
+        alt: "Pechay",
+      },
+    ],
+  },
+  {
+    id: 11,
+    name: "Okra",
+    category: "Vegetables",
+    price: 35,
+    discount: 10,
+    slug: "okra",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-    {
-      id: 12,
-      name: "Chicken",
-      category: "Poultry",
-      price: 300,
-      discount: 0,
-      image: "/products-thumbnail/Chicken.png",
+    images: [
+      {
+        url: "/products-thumbnail/Okra.png",
+        alt: "Okra",
+      },
+    ],
+  },
+  {
+    id: 12,
+    name: "Chicken",
+    category: "Poultry",
+    price: 300,
+    discount: 0,
+    slug: "chicken",
+    unit: {
+      value: 1,
+      type: "kg",
     },
-  ];
+    images: [
+      {
+        url: "/products-thumbnail/Chicken.png",
+        alt: "Chicken",
+      },
+    ],
+  },
+];
 
   return (
     <>

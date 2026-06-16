@@ -1,15 +1,20 @@
-export type PopularProductData = {
+export type ProductImages = {
+  url: string;
+  alt: string;
+};
+
+export type ProductsCatalogType = {
   id: number;
   name: string;
   category: string;
   price: number;
   discount: number;
-  image: string;
-};
-
-export type ProductImages = {
-  url: string;
-  alt: string;
+  slug: string;
+  unit: {
+    value: number;
+    type: string;
+  };
+  images: ProductImages[];
 };
 
 export type Products = {
