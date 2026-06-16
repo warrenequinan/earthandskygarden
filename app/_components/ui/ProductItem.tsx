@@ -5,15 +5,15 @@ import {
   HiOutlineHeart,
   HiOutlineShoppingBag,
 } from "react-icons/hi";
-import type { Product } from "@/app/_types/product.types";
+import type { ProductsCatalogType } from "@/app/_types/product.types";
 import Link from "next/link";
 
 type ProductItemType = {
-  product: Product;
+  product: ProductsCatalogType;
 };
 
 const ProductItem = ({ product }: ProductItemType) => {
-  const { name, price, discount, image } = product;
+  const { name, price, discount, images } = product;
   const discountedPrice = discount > 0 ? price * (discount / 100) : 0;
 
   return (
@@ -21,7 +21,7 @@ const ProductItem = ({ product }: ProductItemType) => {
       <div className="relative mb-8 h-[191px] w-[251px]">
         <Image
           className="object-contain transition-all duration-[400ms] group-hover:scale-110"
-          src={image}
+          src={images[0].url}
           fill
           quality={100}
           alt={`eas ${name.toLowerCase()} product thumbnail`}
@@ -30,7 +30,7 @@ const ProductItem = ({ product }: ProductItemType) => {
       <h5 className="text-xl font-bold uppercase text-primary">{name}</h5>
       <p className="text-base text-primary">
         {discount > 0
-          ? `₱ ${(price - discountedPrice).toFixed(2)} / kg`
+          ? `₱ ${(price - discountedPrice).toFixed(2)} / ${product.unit.type}`
           : `₱ ${price.toFixed(2)} / kg`}
         {discount > 0 && (
           <span className="ml-[10px] text-muted-700 line-through">

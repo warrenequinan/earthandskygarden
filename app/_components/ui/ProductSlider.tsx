@@ -3,12 +3,12 @@ import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import type { PopularProductData } from "@/app/_types/product.types";
+import type { ProductsCatalogType } from "@/app/_types/product.types";
 import ProductItem from "./ProductItem";
 import SliderButton from "./SliderButton";
 
 type ProductSliderProps = {
-  products: PopularProductData[];
+  products: ProductsCatalogType[];
 };
 
 const ProductSlider = ({ products }: ProductSliderProps) => {
