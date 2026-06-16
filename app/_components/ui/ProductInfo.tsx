@@ -1,6 +1,9 @@
 import Badge from "@/app/_components/ui/Badge";
 import type { Products } from "@/app/_types/product.types";
 import clsx from "clsx";
+import { HiMinus, HiPlus, HiShoppingBag } from "react-icons/hi";
+import Button from "./Button";
+import CartCounter from "./CartCounter";
 
 type ProductInfoPropType = {
   product: Products;
@@ -23,11 +26,13 @@ const ProductInfo = ({ product }: ProductInfoPropType) => {
         )}
       </div>
 
-      <h5 className="mt-4 md:mt-6 md:mb-4 text-[24px] md:text-[34px] font-normal uppercase text-primary">
+      <h5 className="mt-4 text-[24px] font-normal uppercase text-primary md:mb-4 md:mt-6 md:text-[34px]">
         {product.name}
       </h5>
       <div className="flex items-center gap-2 uppercase text-accent-700">
-        <p className="text-[36px] md:text-6xl font-bold italic">₱ {finalPrice.toFixed(2)}</p>
+        <p className="text-[36px] font-bold italic md:text-6xl">
+          ₱ {finalPrice.toFixed(2)}
+        </p>
         <div className="flex items-center gap-1 text-base font-medium italic">
           <span className="line-through">
             {discount > 0 && `₱ ${product.price.toFixed(2)}`}
@@ -58,7 +63,17 @@ const ProductInfo = ({ product }: ProductInfoPropType) => {
         snacking, these versatile vegetables are a rich source of beta-carotene,
         fiber, and vitamins that support a balanced diet and healthy lifestyle.
       </p>
-      <div>add to cart here</div>
+      <div className="flex items-end gap-8">
+        <div className="flex flex-col gap-2">
+          <p className="text-[13px] font-bold uppercase text-primary">
+            Quantity:
+          </p>
+          <CartCounter />
+        </div>
+        <Button variant="primary" size="default">
+          <HiShoppingBag className="text-[15px]" /> Add to cart
+        </Button>
+      </div>
     </>
   );
 };
