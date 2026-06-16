@@ -3,6 +3,9 @@ import { Roboto } from "next/font/google";
 import "swiper/css";
 import "@/app/_styles/globals.css";
 import "swiper/css/effect-fade";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 import Header from "@/app/_components/sections/Header";
 import Footer from "@/app/_components/sections/Footer";
 
