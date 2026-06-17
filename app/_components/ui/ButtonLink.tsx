@@ -1,12 +1,13 @@
 import clsx from "clsx";
+import Link from "next/link";
 
 type ButtonPropType = {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
   size: "small" | "medium" | "default";
-  disabled?: boolean;
   variant: "primary" | "secondary" | "transparent";
+  href: string;
 };
 
 const buttonSize: Record<"small" | "medium" | "default", string> = {
@@ -23,37 +24,35 @@ const buttonVariant = {
   transparent: "bg-transparent",
 };
 
-const Button = ({
+const ButtonLink = ({
   children,
-  onClick,
   className,
+  href,
   size = "default",
   variant = "primary",
-  disabled,
 }: ButtonPropType) => {
   const defaultConfig =
-    "disabled:cursor-not-allowed uppercase rounded-[5px] flex items-center justify-center !leading-none group ";
+    "disabled:cursor-not-allowed uppercase rounded-[5px] inline-flex items-center justify-center !leading-none group ";
 
   return (
-    <button
+    <Link
+      href={href}
       className={clsx(
         buttonSize[size] + buttonVariant[variant] + defaultConfig,
         className,
       )}
-      onClick={onClick}
-      disabled={disabled}
     >
       <span className="relative h-full overflow-hidden">
-        <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+        <span className="flex flex-grow-0 items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
           {children}
         </span>
 
-        <span className="gap-2 duration-300 absolute left-0 top-full flex items-center transition-transform group-hover:-translate-y-full">
+        <span className="absolute left-0 top-full flex flex-grow-0 items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
           {children}
         </span>
       </span>
-    </button>
+    </Link>
   );
 };
 
-export default Button;
+export default ButtonLink;

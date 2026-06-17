@@ -3,14 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Autoplay,
-  EffectCards,
-  EffectCreative,
-  EffectCube,
-  EffectFade,
-  EffectFlip,
-} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import heroSlider1 from "@/public/eas-hero-slider-1.png";
@@ -18,7 +11,7 @@ import heroSlider2 from "@/public/hero-slider-2.png";
 import heroSlider3 from "@/public/hero-slider-3.png";
 import PaperOverlay from "@/app/_components/ui/PaperOverlay";
 import SliderBullet from "../ui/SliderBullet";
-import Link from "next/link";
+import ButtonLink from "../ui/ButtonLink";
 
 const Hero = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -33,7 +26,7 @@ const Hero = () => {
         after: "Garden",
       },
       subText: "Welcome to",
-      button: {
+      link: {
         text: "Browse Our Products",
         url: "/products",
       },
@@ -49,7 +42,7 @@ const Hero = () => {
         after: "Garden",
       },
       subText: "Fresh From Local Farms",
-      button: {
+      link: {
         text: "Shop Vegetables & Fruits",
         url: "",
       },
@@ -65,7 +58,7 @@ const Hero = () => {
         after: "",
       },
       subText: "Clean & Fresh Protein Source",
-      button: {
+      link: {
         text: "Shop Meat & Poultry",
         url: "",
       },
@@ -81,7 +74,6 @@ const Hero = () => {
       <Swiper
         className="h-[100vh] min-h-[600px] w-full"
         modules={[Autoplay]}
-        // effect="creative"
         slidesPerView={1}
         autoplay={{
           delay: 3000,
@@ -141,12 +133,14 @@ const Hero = () => {
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ duration: 0.7, delay: 0.6 }}
                       >
-                        <Link
-                          href={item.button.url ?? "#"}
-                          className="flex-inline mx-auto items-center justify-center gap-[10px] rounded-[5px] bg-accent-700 px-4 py-3 !text-sm font-semibold uppercase text-white transition-colors hover:bg-accent-800 md:px-5 md:py-4 md:text-base"
+                        <ButtonLink
+                          href={item?.link?.url ?? "#"}
+                          size="default"
+                          variant="primary"
+                          className="w-auto"
                         >
-                          {item?.button?.text}
-                        </Link>
+                          {item?.link?.text}
+                        </ButtonLink>
                       </motion.div>
                       <SliderBullet
                         className="mt-[104px]"
