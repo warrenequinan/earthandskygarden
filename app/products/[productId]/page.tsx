@@ -200,7 +200,9 @@ const Page = () => {
             <ProductThumbSlider images={productTemp.images} />
           </div>
           <div className="flex-1">
-            <ProductInfo product={productTemp} />
+            <div className="sticky top-24">
+              <ProductInfo product={productTemp} />
+            </div>
           </div>
         </div>
       </SectionContainer>
