@@ -1,7 +1,7 @@
 import Badge from "@/app/_components/ui/Badge";
 import type { Products } from "@/app/_types/product.types";
 import clsx from "clsx";
-import { HiMinus, HiPlus, HiShoppingBag } from "react-icons/hi";
+import { HiShoppingBag } from "react-icons/hi";
 import Button from "./Button";
 import CartCounter from "./CartCounter";
 
