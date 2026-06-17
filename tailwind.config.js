@@ -53,7 +53,7 @@ module.exports = {
         },
         muted: {
           100: "#f9f9f9",
-          200: "#f1f1f1",
+          200: "#f2f2f2",
           300: "#e3e3e3",
           400: "#DEDEDE",
           500: "#e9e9e9",
