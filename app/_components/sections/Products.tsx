@@ -176,27 +176,14 @@ const Products = () => {
 
   return (
     <section className="w-full pb-[72px]">
-      <div className="relative mx-auto max-w-[1320px] px-4 xl:px-0">
-        <SectionHeader align="left">Shop by category</SectionHeader>
-        <Description align="left" className="mb-8 mt-8 max-w-[735px]">
-          Discover the finest harvest from our farm, featuring fresh vegetables,
-          carefully cultivated mushrooms, and responsibly produced livestock
-          products. Our commitment to quality and sustainable farming ensures
-          that every item delivers freshness, flavor, and value you can trust.
-        </Description>
-      </div>
-
-      <div className="mt-8 flex flex-col text-center lg:flex-row">
-        <CategoryCard overlay="vegetables">
-          <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
-            <Image
-              src={vegetableCategory}
-              fill
-              alt="vegetable category thumbnail"
-            />
-          </div>
-          <h3 className="z-10 text-2xl font-black uppercase text-primary">
-            Vegetables
+      <SectionHeader align="center">Shop by category</SectionHeader>
+      <div className="flex h-auto flex-col gap-4 px-4 text-center mt-10 lg:h-[500px] lg:flex-row lg:px-0">
+        <CategoryCard
+          overlay="vegetables"
+          className="rounded-bl-[5px] rounded-br-[5px] rounded-tl-[5px] rounded-tr-[5px] px-6 py-36 lg:rounded-bl-none lg:rounded-tl-none lg:p-0"
+        >
+          <h3 className="z-10 text-2xl font-black uppercase text-white md:text-[34px]">
+            Fresh Vegetables
           </h3>
           <div className="z-10 mt-2">
             <Button size="default" variant="primary">
@@ -205,17 +192,12 @@ const Products = () => {
           </div>
         </CategoryCard>
 
-        <CategoryCard overlay="fruits">
-          <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
-            <Image
-              src={fruitsCategory}
-              fill
-              alt="fruit category thumbnail"
-              quality={100}
-            />
-          </div>
-          <h3 className="z-10 text-2xl font-black uppercase text-primary">
-            Fruits
+        <CategoryCard
+          overlay="fruits"
+          className="rounded-[5px] px-6 py-36 lg:p-0"
+        >
+          <h3 className="z-10 text-2xl font-black uppercase text-white md:text-[34px]">
+            Seasonal Fruits
           </h3>
           <div className="z-10 mt-2">
             <Button size="default" variant="primary">
@@ -224,16 +206,11 @@ const Products = () => {
           </div>
         </CategoryCard>
 
-        <CategoryCard overlay="meat">
-          <div className="relative z-10 mb-4 h-[186px] w-[186px] transition-transform duration-300 group-hover:scale-110">
-            <Image
-              src={meatCategory}
-              fill
-              alt="meat and poultry category thumbnail"
-              quality={100}
-            />
-          </div>
-          <h3 className="z-10 text-2xl font-black uppercase text-primary">
+        <CategoryCard
+          overlay="meat"
+          className="rounded-bl-[5px] rounded-br-[5px] rounded-tl-[5px] rounded-tr-[5px] px-6 py-36 lg:rounded-br-none lg:rounded-tr-none lg:p-0"
+        >
+          <h3 className="z-10 text-2xl font-black uppercase text-white md:text-[34px]">
             Meat & Poultry
           </h3>
           <div className="z-10 mt-2">

@@ -14,7 +14,7 @@ const CardContainer = ({
   return (
     <div
       className={clsx(
-        "group relative flex flex-col rounded-[5px] border border-muted-300 transition-all duration-[400ms]",
+        "group relative flex flex-col rounded-[5px] transition-all duration-[400ms]",
         align === "left" ? "items-start" : "items-center",
         className,
       )}
