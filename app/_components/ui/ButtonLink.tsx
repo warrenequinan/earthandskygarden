@@ -8,6 +8,7 @@ type ButtonPropType = {
   size: "small" | "medium" | "default";
   variant: "primary" | "secondary" | "transparent";
   href: string;
+  animation?: boolean;
 };
 
 const buttonSize: Record<"small" | "medium" | "default", string> = {
@@ -28,6 +29,7 @@ const ButtonLink = ({
   children,
   className,
   href,
+  animation = true,
   size = "default",
   variant = "primary",
 }: ButtonPropType) => {
@@ -42,15 +44,19 @@ const ButtonLink = ({
         className,
       )}
     >
-      <span className="relative h-full overflow-hidden">
-        <span className="flex flex-grow-0 items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
-          {children}
-        </span>
+      {!animation ? (
+        children
+      ) : (
+        <span className="relative h-full overflow-hidden">
+          <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+            {children}
+          </span>
 
-        <span className="absolute left-0 top-full flex flex-grow-0 items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
-          {children}
+          <span className="absolute left-0 top-full flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+            {children}
+          </span>
         </span>
-      </span>
+      )}
     </Link>
   );
 };

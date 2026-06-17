@@ -6,6 +6,7 @@ type ButtonPropType = {
   className?: string;
   size: "small" | "medium" | "default";
   disabled?: boolean;
+  animation?: boolean;
   variant: "primary" | "secondary" | "transparent";
 };
 
@@ -29,6 +30,7 @@ const Button = ({
   className,
   size = "default",
   variant = "primary",
+  animation = true,
   disabled,
 }: ButtonPropType) => {
   const defaultConfig =
@@ -43,15 +45,19 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
     >
-      <span className="relative h-full overflow-hidden">
-        <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
-          {children}
-        </span>
+      {!animation ? (
+        children
+      ) : (
+        <span className="relative h-full overflow-hidden">
+          <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+            {children}
+          </span>
 
-        <span className="gap-2 duration-300 absolute left-0 top-full flex items-center transition-transform group-hover:-translate-y-full">
-          {children}
+          <span className="absolute left-0 top-full flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+            {children}
+          </span>
         </span>
-      </span>
+      )}
     </button>
   );
 };
