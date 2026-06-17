@@ -12,6 +12,7 @@ const Pagination = () => {
       <Button
         size="medium"
         variant="transparent"
+        animation={false}
         className="!p-0 text-lg text-primary"
       >
         <HiChevronDoubleLeft />
@@ -21,6 +22,7 @@ const Pagination = () => {
           <Button
             variant="secondary"
             size="medium"
+            animation={false}
             key={index}
             className={`${index === activePage - 1 && "!bg-accent-700 text-white"}`}
             disabled={index === activePage - 1}
@@ -31,6 +33,7 @@ const Pagination = () => {
       </div>
       <Button
         size="medium"
+        animation={false}
         variant="transparent"
         className="!p-0 text-lg text-primary"
       >

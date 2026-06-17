@@ -17,7 +17,7 @@ const TestimonialItem = ({ customer }: TestimonialItemPropType) => {
   } = customer;
 
   return (
-    <CardContainer align="left" className="h-full p-6">
+    <CardContainer align="left" className="h-full p-6 border border-muted-600">
       <Description align="left" className="mb-6 max-w-full lg:max-w-[357px]">
         {testimonial}
       </Description>
