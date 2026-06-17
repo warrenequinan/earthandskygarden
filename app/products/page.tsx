@@ -16,7 +16,7 @@ const Page = () => {
     highlight: "Fresh",
     after: "From the farm",
   };
-  const breadcrumb = [{ name: "Home", link: "/" }, { name: "Products" }];
+  const breadcrumb = [{ name: "Home", link: "/" }, { name: "All Products" }];
   const background = {
     url: "/eas-products-page-hero-image.jpg",
     alt: "eas products page hero image",
