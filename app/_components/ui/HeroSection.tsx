@@ -27,7 +27,7 @@ const HeroSection = ({
         !background && "bg-slate-600",
       )}
     >
-      <div className="mx-auto max-w-[1320px]">
+      <div className="mx-auto max-w-[1320px] -mt-16">
         <h1 className="mb-1 text-4xl font-black italic tracking-tight text-white md:mb-4 md:text-6xl">
           {before}
           {highlight && (
