@@ -44,7 +44,7 @@ const HeroSection = ({
           {after}
         </h1>
         <nav>
-          <ul className="flex justify-center gap-[10px] text-xs font-medium text-white md:text-base">
+          <ul className="flex justify-center gap-[10px] text-xs font-medium text-white md:text-sm">
             {breadcrumb.map((item, index) => (
               <li
                 className={`${index === breadcrumb.length - 1 ? "font-bold text-accent-700" : "after:ml-[10px] after:content-['/']"}`}
