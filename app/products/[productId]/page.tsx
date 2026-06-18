@@ -30,14 +30,20 @@ const productTemp = {
     {
       url: "/products-gallery/carrot-1.png",
       alt: "eas products carrot 1",
+      width: 400,
+      height: 304,
     },
     {
       url: "/products-gallery/carrot-2.png",
       alt: "eas products carrot 2",
+      width: 400,
+      height: 329,
     },
     {
       url: "/products-gallery/carrot-3.png",
       alt: "eas products carrot 3",
+      width: 400,
+      height: 260,
     },
   ],
 };

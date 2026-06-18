@@ -27,7 +27,7 @@ const HeroSection = ({
         !background && "bg-slate-600",
       )}
     >
-      <div className="mx-auto max-w-[1320px] -mt-16">
+      <div className="mx-auto max-w-[1320px] -mt-20">
         <h1 className="mb-1 text-4xl font-black italic tracking-tight text-white md:mb-4 md:text-6xl">
           {before}
           {highlight && (
@@ -44,7 +44,7 @@ const HeroSection = ({
           {after}
         </h1>
         <nav>
-          <ul className="flex justify-center gap-[10px] text-lg font-medium text-white md:text-base">
+          <ul className="flex justify-center gap-[10px] text-xs font-medium text-white md:text-sm">
             {breadcrumb.map((item, index) => (
               <li
                 className={`${index === breadcrumb.length - 1 ? "font-bold text-accent-700" : "after:ml-[10px] after:content-['/']"}`}

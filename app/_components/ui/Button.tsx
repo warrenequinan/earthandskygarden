@@ -49,11 +49,11 @@ const Button = ({
         children
       ) : (
         <span className="relative h-full overflow-hidden">
-          <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+          <span className="flex items-center gap-2 transition-transform duration-500 group-hover:-translate-y-full">
             {children}
           </span>
 
-          <span className="absolute left-0 top-full flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+          <span className="absolute left-0 top-full flex items-center gap-2 transition-transform duration-500 group-hover:-translate-y-full">
             {children}
           </span>
         </span>

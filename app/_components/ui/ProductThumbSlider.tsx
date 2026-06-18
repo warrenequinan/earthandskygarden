@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import { ProductImages } from "@/app/_types/product.types";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/style.css";
 
 type ProductThumbSlider = {
   images: ProductImages[];
@@ -14,29 +16,56 @@ type ProductThumbSlider = {
 const ProductThumbSlider = ({ images }: ProductThumbSlider) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
+    useEffect(() => {
+      console.log("test")
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: "#eas-product-gallery",
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+      showHideAnimationType: "zoom",
+      arrowPrev: true,
+        arrowNext: true,
+      bgOpacity: 0.3
+    });
+
+    lightbox.init();
+
+    return () => lightbox.destroy();
+  }, []);
+
   return (
     <>
-      <Swiper
-        spaceBetween={32}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Thumbs]}
-        loop={true}
-      >
-        {images.map((image) => (
-          <SwiperSlide key={image.url}>
-            <div className="flex aspect-square w-full items-center justify-center rounded-[5px] border border-muted-400">
-              <Image
-                src={image.url}
-                alt={image.alt}
-                className="h-auto max-w-[250px] sm:max-w-[400px]"
-                width={400}
-                height={304}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div id="eas-product-gallery">
+        <Swiper
+          spaceBetween={32}
+          navigation={true}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Thumbs]}
+        >
+          {images.map((image) => (
+            <SwiperSlide key={image.url}>
+              <a
+                href={image.url}
+                data-pswp-width={400}
+                data-pswp-height={329}
+                className="cursor-zoom-in"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="flex aspect-square w-full items-center justify-center rounded-[5px] border border-muted-400">
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    className="h-auto max-w-[250px] object-cover sm:max-w-[400px]"
+                    width={400}
+                    height={329}
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={16}
