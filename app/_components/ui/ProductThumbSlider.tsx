@@ -16,16 +16,14 @@ type ProductThumbSlider = {
 const ProductThumbSlider = ({ images }: ProductThumbSlider) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
-    useEffect(() => {
-      console.log("test")
+  useEffect(() => {
     const lightbox = new PhotoSwipeLightbox({
       gallery: "#eas-product-gallery",
       children: "a",
       pswpModule: () => import("photoswipe"),
       showHideAnimationType: "zoom",
       arrowPrev: true,
-        arrowNext: true,
-      bgOpacity: 0.3
+      arrowNext: true,
     });
 
     lightbox.init();
