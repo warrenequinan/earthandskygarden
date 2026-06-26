@@ -23,7 +23,7 @@ const HeroSection = ({
   return (
     <section
       className={clsx(
-        "relative flex h-[600] items-center justify-center px-6 text-center uppercase lg:px-0",
+        "relative flex h-[600px] items-center justify-center px-6 text-center uppercase lg:px-0",
         !background && "bg-slate-600",
       )}
     >
