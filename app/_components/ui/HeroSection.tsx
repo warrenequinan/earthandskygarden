@@ -43,7 +43,7 @@ const HeroSection = ({
           )}
           {after}
         </h1>
-        <nav>
+        <nav aria-label="Breadcrumb">
           <ul className="flex justify-center gap-[10px] text-xs font-medium text-white md:text-sm">
             {breadcrumb.map((item, index) => {
               const isLastBreadcrumb = index === breadcrumb.length - 1;
@@ -53,7 +53,7 @@ const HeroSection = ({
                   key={item.name}
                 >
                   {isLastBreadcrumb ? (
-                    item.name
+                    <span aria-current="page">{item.name}</span>
                   ) : (
                     <Link href={item.link ?? "#"}>{item.name}</Link>
                   )}
