@@ -1,7 +1,6 @@
 import { supabase } from "./supabase";
 
 export const getProducts = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
   const { data: products, error } = await supabase
     .from("products")
     .select("id,name,category,price,discount,slug,unit, images");
