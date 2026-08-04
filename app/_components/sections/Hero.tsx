@@ -13,11 +13,6 @@ import PaperOverlay from "@/app/_components/ui/PaperOverlay";
 import SliderBullet from "../ui/SliderBullet";
 import ButtonLink from "../ui/ButtonLink";
 
-const Hero = () => {
-  const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  const [activeSlider, setActiveSlider] = useState(0);
-  const [renderSlider, setRenderSlider] = useState(0);
-
   const slideItems = [
     {
       title: {
@@ -68,6 +63,11 @@ const Hero = () => {
       },
     },
   ];
+
+const Hero = () => {
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [activeSlider, setActiveSlider] = useState(0);
+  const [renderSlider, setRenderSlider] = useState(0);
 
   return (
     <section className="relative w-full uppercase">

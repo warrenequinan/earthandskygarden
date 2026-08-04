@@ -1,15 +1,15 @@
 import clsx from "clsx";
 
 type CardContainerPropType = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
-  align: "left" | "center";
+  align?: "left" | "center";
 };
 
 const CardContainer = ({
   children,
   className,
-  align,
+  align="left",
 }: CardContainerPropType) => {
   return (
     <div

@@ -15,7 +15,7 @@ type ProductItemType = {
 const ProductItem = ({ product }: ProductItemType) => {
   const { name, price, discount, images } = product;
   const discountedPrice = discount > 0 ? price * (discount / 100) : 0;
-
+    console.log(images[0].url)
   return (
     <CardContainer className="bg-muted-200 px-6 py-6" align="center">
       <div className="relative mb-8 h-[191px] w-[251px]">
@@ -31,7 +31,7 @@ const ProductItem = ({ product }: ProductItemType) => {
       <p className="text-base text-primary">
         {discount > 0
           ? `₱ ${(price - discountedPrice).toFixed(2)} / ${product.unit.type}`
-          : `₱ ${price.toFixed(2)} / kg`}
+          : `₱ ${price.toFixed(2)} / ${product.unit.type}`}
         {discount > 0 && (
           <span className="ml-[10px] text-muted-700 line-through">
             ₱ {price.toFixed(2)}

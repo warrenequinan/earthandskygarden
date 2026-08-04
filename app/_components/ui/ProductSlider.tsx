@@ -9,9 +9,10 @@ import SliderButton from "./SliderButton";
 
 type ProductSliderProps = {
   products: ProductsCatalogType[];
+  hasButton?: boolean;
 };
 
-const ProductSlider = ({ products }: ProductSliderProps) => {
+const ProductSlider = ({ products, hasButton = true }: ProductSliderProps) => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -56,12 +57,14 @@ const ProductSlider = ({ products }: ProductSliderProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <SliderButton
-        isBeginning={isBeginning}
-        isEnd={isEnd}
-        swiper={swiper}
-        align="center"
-      />
+      {hasButton && (
+        <SliderButton
+          isBeginning={isBeginning}
+          isEnd={isEnd}
+          swiper={swiper}
+          align="center"
+        />
+      )}
     </div>
   );
 };

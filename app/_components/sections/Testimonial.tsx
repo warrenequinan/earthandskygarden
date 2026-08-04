@@ -118,6 +118,7 @@ const Testimonial = () => {
             onSetEnd={handleSetEnd}
             onActiveSlider={handleSetActive}
           />
+
           <SliderBullet
             className="mt-6"
             swiper={swiper}
