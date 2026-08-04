@@ -1,11 +1,11 @@
-import { getProducts } from "@/app/_lib/products";
+import { getPopularProducts } from "@/app/_lib/products";
 import ProductSlider from "./ProductSlider";
 
 const ProductsSliderSection = async () => {
-  let products = null;
+  let popularProducts = null;
 
   try {
-    products = await getProducts();
+      popularProducts = await getPopularProducts();
   } catch {
     return (
       <div className="py-10 text-center">
@@ -17,7 +17,7 @@ const ProductsSliderSection = async () => {
     );
   }
 
-  return <ProductSlider products={products} />;
+  return <ProductSlider products={popularProducts} />;
 };
 
 export default ProductsSliderSection;
