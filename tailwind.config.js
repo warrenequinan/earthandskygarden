@@ -39,6 +39,11 @@ module.exports = {
             transform: "translateY(-12px)",
           },
         },
+        shimmer: {
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         truckAnim: "truckLoop 350ms linear",

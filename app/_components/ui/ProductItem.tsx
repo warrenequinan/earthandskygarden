@@ -17,21 +17,23 @@ const ProductItem = ({ product }: ProductItemType) => {
   const discountedPrice = discount > 0 ? price * (discount / 100) : 0;
 
   return (
-    <CardContainer className="bg-muted-200 px-6 py-6" align="center">
+    <CardContainer className="bg-muted-200 px-6 py-8" align="center">
       <div className="relative mb-8 h-[191px] w-[251px]">
-        <Image
-          className="object-contain transition-all duration-[400ms] group-hover:scale-110"
-          src={images[0].url}
-          fill
-          quality={100}
-          alt={`eas ${name.toLowerCase()} product thumbnail`}
-        />
+        {images[0].url && (
+          <Image
+            className="object-contain transition-all duration-[400ms] group-hover:scale-110"
+            src={images[0].url}
+            fill
+            quality={100}
+            alt={images[0].alt}
+          />
+        )}
       </div>
       <h5 className="text-xl font-bold uppercase text-primary">{name}</h5>
       <p className="text-base text-primary">
         {discount > 0
           ? `₱ ${(price - discountedPrice).toFixed(2)} / ${product.unit.type}`
-          : `₱ ${price.toFixed(2)} / kg`}
+          : `₱ ${price.toFixed(2)} / ${product.unit.type}`}
         {discount > 0 && (
           <span className="ml-[10px] text-muted-700 line-through">
             ₱ {price.toFixed(2)}
