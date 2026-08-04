@@ -17,6 +17,8 @@ const ProductSlider = ({ products, hasButton = true }: ProductSliderProps) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
+  if(!products.length) return null;
+    
   return (
     <div className="mx-auto max-w-[2560px]">
       <Swiper

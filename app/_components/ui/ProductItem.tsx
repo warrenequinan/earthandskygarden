@@ -15,17 +15,19 @@ type ProductItemType = {
 const ProductItem = ({ product }: ProductItemType) => {
   const { name, price, discount, images } = product;
   const discountedPrice = discount > 0 ? price * (discount / 100) : 0;
-    console.log(images[0].url)
+
   return (
-    <CardContainer className="bg-muted-200 px-6 py-6" align="center">
+    <CardContainer className="bg-muted-200 px-6 py-8" align="center">
       <div className="relative mb-8 h-[191px] w-[251px]">
-        <Image
-          className="object-contain transition-all duration-[400ms] group-hover:scale-110"
-          src={images[0].url}
-          fill
-          quality={100}
-          alt={`eas ${name.toLowerCase()} product thumbnail`}
-        />
+        {images[0].url && (
+          <Image
+            className="object-contain transition-all duration-[400ms] group-hover:scale-110"
+            src={images[0].url}
+            fill
+            quality={100}
+            alt={images[0].alt}
+          />
+        )}
       </div>
       <h5 className="text-xl font-bold uppercase text-primary">{name}</h5>
       <p className="text-base text-primary">

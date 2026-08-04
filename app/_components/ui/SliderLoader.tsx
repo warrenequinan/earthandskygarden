@@ -14,7 +14,7 @@ const SliderLoader = () => {
       {Array.from({ length: 5 }).map((_, index) => (
         <CardContainer
           key={index}
-          className={`${visibilityClasses[index]} h-[400px] w-full overflow-hidden bg-muted-200`}
+          className={`${visibilityClasses[index]} h-[338.967px] w-full overflow-hidden bg-muted-200`}
         >
           <div className="relative h-full w-full">
             <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
