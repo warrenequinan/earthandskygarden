@@ -1,3 +1,5 @@
+"use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CustomerTestimonialType } from "@/app/_types/testimonial.type";
 import TestimonialItem from "./TestimonialItem";
