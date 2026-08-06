@@ -6,7 +6,7 @@ export const getProducts = async () => {
     .from("products")
     .select("id,name,category,price,discount,slug,unit, images");
   if (error) throw new Error("There is a problem in fetching products.");
-  return products;
+  return products as unknown as ProductsCatalogType[];
 };
 
 export const getPopularProducts = async () => {
