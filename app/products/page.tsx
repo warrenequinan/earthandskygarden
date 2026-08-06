@@ -3,8 +3,7 @@ import SectionContainer from "@/app/_components/ui/SectionContainer";
 import SidebarFilter from "@/app/_components/ui/SidebarFilter";
 import ProductsCatalog from "../_components/ui/ProductsCatalog";
 import { Metadata } from "next";
-import { ProductsCatalogType } from "../_types/product.types";
-import { getProducts } from "../_lib/products";
+import { SearchParamsType } from "../_types/SearchParams.types";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -23,16 +22,12 @@ const background = {
   alt: "eas products page hero image",
 };
 
-const Page = async () => {
-  let products: null | ProductsCatalogType[] = null;
-  let hasError = false;
-  
-  try {
-    products = await getProducts();
-  } catch (err) {
-      console.error("Error fetching products:", err);
-      hasError = true;
-  }
+type PageProps = {
+  searchParams: SearchParamsType;
+};
+
+const Page = async ({ searchParams }: PageProps) => {
+  const params = await searchParams;
 
   return (
     <>
@@ -44,7 +39,7 @@ const Page = async () => {
       <SectionContainer>
         <div className="grid grid-cols-1 gap-8 px-6 lg:grid-cols-[300px_1fr] lg:px-0">
           <SidebarFilter />
-          <ProductsCatalog products={products} hasError={hasError} />
+          <ProductsCatalog params={params} />
         </div>
       </SectionContainer>
     </>
