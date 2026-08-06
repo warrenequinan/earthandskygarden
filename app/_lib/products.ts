@@ -1,14 +1,16 @@
 import { ProductsCatalogType } from "../_types/product.types";
 import { supabase } from "./supabase";
 
-type FilterType = string | string[] | null | number;
+type SearchParamValue = string | string[] | null | number;
 
 type Filter = Record<
   "category" | "discount" | "priceLte" | "priceGte",
-  FilterType
+  SearchParamValue
 >;
 
-export const getProducts = async (filter: Filter) => {
+type Sort = Record<"show" | "order", SearchParamValue>;
+
+export const getProducts = async (filter: Filter, sort: Sort) => {
   let query = supabase
     .from("products")
     .select("id,name,category,price,discount,slug,unit, images");
@@ -24,7 +26,7 @@ export const getProducts = async (filter: Filter) => {
   if (filter.discount) {
     if (filter.discount === "with-discount") {
       query = query.gt("discount", 0);
-    } else if (filter.discount === "without-discount") {
+    } else {
       query = query.eq("discount", 0);
     }
   }
@@ -35,6 +37,27 @@ export const getProducts = async (filter: Filter) => {
 
   if (filter.priceGte && !Array.isArray(filter.priceGte)) {
     query = query.gte("price", filter.priceGte);
+  }
+
+  if (sort.show && !Array.isArray(sort.show)) {
+    query = query.limit(Number(sort.show));
+  }
+
+  if (sort.order && !Array.isArray(sort.order)) {
+    switch (sort.order) {
+      case "price_asc":
+        query = query.order("price", { ascending: true });
+        break;
+      case "price_desc":
+        query = query.order("price", { ascending: false });
+        break;
+      case "name_asc":
+        query = query.order("name", { ascending: true });
+        break;
+      case "name_desc":
+        query = query.order("name", { ascending: false });
+        break;
+    }
   }
 
   const { data: products, error } = await query;

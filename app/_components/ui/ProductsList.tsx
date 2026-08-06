@@ -12,15 +12,22 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
   const discount = params.discount ?? null;
   const priceLte = params.priceLte ?? 0;
   const priceGte = params.priceGte ?? 0;
+  const show = params.show ?? 12;
+  const order = params.order ?? null;
   const filter = {
     category,
     discount,
     priceLte,
     priceGte,
+    show,
+  };
+  const sort = {
+    show,
+    order,
   };
 
   try {
-    products = await getProducts(filter);
+    products = await getProducts(filter, sort);
   } catch (err) {
     console.error("Error fetching products:", err);
     hasError = true;
