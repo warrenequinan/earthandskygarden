@@ -4,6 +4,7 @@ import ErrorMessage from "./ErrorMessage";
 import { ProductResponse } from "@/app/_types/product.types";
 import { getProducts } from "@/app/_lib/products";
 import { SearchParams } from "@/app/_types/SearchParams.types";
+import { redirect } from "next/navigation";
 
 const ProductsList = async ({ params }: { params: SearchParams }) => {
   let products: null | ProductResponse = null;
@@ -38,11 +39,37 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
   try {
     products = await getProducts(filter, sort, pagination);
   } catch (err) {
+    if (
+      typeof err === "object" &&
+      err !== null &&
+      "code" in err &&
+      err.code === "PGRST103"
+    ) {
+      const queryParams = new URLSearchParams();
+
+      Object.entries(params).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          value.forEach((item) => {
+            queryParams.append(key, String(item));
+          });
+        } else if (value !== null && value !== undefined) {
+          queryParams.set(key, String(value));
+        }
+      });
+
+      queryParams.set("page", "1");
+
+      redirect(`/products?${queryParams.toString()}`);
+    }
+
     console.error("Error fetching products:", err);
     hasError = true;
   }
 
   const isProductsAvailable = products && products.data.length > 0;
+  const numberOfPages = Math.ceil(
+    (products?.totalItems ?? 0) / Number(pageSize),
+  );
 
   return (
     <>
@@ -66,10 +93,17 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
       {isProductsAvailable && (
         <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-base font-bold text-primary">
-            Showing <span className="text-accent-700">1 to 12 of 24 </span>
-            products results
+            Showing{" "}
+            <span className="text-accent-700">
+              {(Number(page) - 1) * Number(pageSize) + 1} to{" "}
+              {Math.min(
+                Number(page) * Number(pageSize),
+                products?.totalItems ?? 0,
+              )}
+            </span>{" "}
+            of {products?.totalItems} products results
           </p>
-          <Pagination />
+          <Pagination totalPage={numberOfPages} activePage={Number(page)} />
         </div>
       )}
     </>

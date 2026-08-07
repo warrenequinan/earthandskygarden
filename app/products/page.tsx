@@ -38,7 +38,7 @@ const Page = async ({ searchParams }: PageProps) => {
       />
       <SectionContainer>
         <div className="grid grid-cols-1 gap-8 px-6 lg:grid-cols-[300px_1fr] lg:px-0">
-          <SidebarFilter />
+          <SidebarFilter params={params} />
           <ProductsCatalog params={params} />
         </div>
       </SectionContainer>

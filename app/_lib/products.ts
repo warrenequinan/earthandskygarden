@@ -19,7 +19,9 @@ export const getProducts = async (
 ) => {
   let query = supabase
     .from("products")
-    .select("id,name,category,price,discount,slug,unit, images");
+    .select("id,name,category,price,discount,slug,unit, images", {
+      count: "exact",
+    });
 
   if (filter.category) {
     if (Array.isArray(filter.category)) {
@@ -39,10 +41,10 @@ export const getProducts = async (
 
   if (filter.priceLte && !Array.isArray(filter.priceLte)) {
     query = query.lte("price", filter.priceLte);
-  }
 
-  if (filter.priceGte && !Array.isArray(filter.priceGte)) {
-    query = query.gte("price", filter.priceGte);
+    if (filter.priceGte && !Array.isArray(filter.priceGte)) {
+      query = query.gte("price", filter.priceGte);
+    }
   }
 
   if (sort.show && !Array.isArray(sort.show)) {
@@ -67,21 +69,18 @@ export const getProducts = async (
   }
 
   if (pagination.page && !Array.isArray(pagination.page)) {
-    query = query.range(
-      (Number(pagination.page) - 1) * Number(pagination.pageSize),
-      Number(pagination.page) * Number(pagination.pageSize) - 1,
-    );
+    const from = (Number(pagination.page) - 1) * Number(pagination.pageSize);
+    const to = from + Number(pagination.pageSize) - 1;
+    query = query.range(from, to);
   }
 
   const { data, count, error } = await query;
-
-  if (error) throw new Error("There is a problem in fetching products.");
-
+  if (error) throw error;
   return {
-      data,
-      totalItems: count ?? 0,
-      totalPages: Math.ceil((count ?? 0) / Number(pagination.pageSize)),
-      currentPage: Number(pagination.page),
+    data,
+    totalItems: count ?? 0,
+    totalPages: Math.ceil((count ?? 0) / Number(pagination.pageSize)),
+    currentPage: Number(pagination.page),
   } as unknown as ProductResponse;
 };
 
