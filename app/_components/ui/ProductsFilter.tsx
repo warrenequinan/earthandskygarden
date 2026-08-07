@@ -28,7 +28,7 @@ const ProductsFilter = () => {
         <div className="flex items-center gap-2">
           <h5 className="text-lg font-semibold text-primary">Discount:</h5>
         </div>
-        <FilterGroup name="discountFilter" options={discount} defaultValue="all" />
+        <FilterGroup name="discount" options={discount} defaultValue="all" />
       </div>
       <div className="pb-0 pt-6 lg:pb-6">
         <div className="flex items-center gap-2">
