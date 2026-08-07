@@ -52,7 +52,7 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
           value.forEach((item) => {
             queryParams.append(key, String(item));
           });
-        } else if (value !== null && value !== undefined) {
+        } else {
           queryParams.set(key, String(value));
         }
       });
