@@ -34,7 +34,7 @@ export const getProducts = async (
   if (filter.discount) {
     if (filter.discount === "with-discount") {
       query = query.gt("discount", 0);
-    } else {
+    } else if (filter.discount === "without-discount") {
       query = query.eq("discount", 0);
     }
   }

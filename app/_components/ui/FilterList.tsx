@@ -37,6 +37,18 @@ const FilterList = () => {
           return null;
         }
 
+        if (key === "discount") {
+          return (
+            <button
+              className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"
+              key="price"
+            >
+              <HiXMark strokeWidth={3} />
+              {value.replace("-", " ")}
+            </button>
+          );
+        }
+
         return (
           <button
             className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"

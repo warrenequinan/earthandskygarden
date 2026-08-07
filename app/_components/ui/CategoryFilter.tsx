@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
 type CategoryType = {
   name: string;
   placeholder: string;
@@ -8,6 +11,30 @@ type CategoryFilterPropType = {
 };
 
 const CategoryFilter = ({ category }: CategoryFilterPropType) => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const params = new URLSearchParams(searchParams);
+
+    if (e.target.checked) {
+      params.append("category", e.target.value);
+    } else {
+      const categories = params.getAll("category");
+      params.delete("category");
+
+      categories
+        .filter((category) => category !== e.target.value)
+        .forEach((category) => {
+          params.append("category", category);
+        });
+    }
+
+    router.push(`?${params.toString()}`, {
+      scroll: false,
+    });
+  };
+
   return (
     <fieldset className="mt-4 flex flex-col">
       {category.map((item) => (
@@ -21,6 +48,8 @@ const CategoryFilter = ({ category }: CategoryFilterPropType) => {
             type="checkbox"
             name={item.name}
             value={item.name}
+            checked={searchParams.getAll("category").includes(item.name)}
+            onChange={handleCategoryChange}
           />
           <div className="peer-checked:text-acc flex h-[14px] w-[14px] items-center justify-center rounded border border-muted-500 transition duration-300 peer-checked:border-accent-700 peer-checked:bg-accent-700">
             <svg

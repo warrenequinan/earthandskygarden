@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 type OptionsType = {
@@ -15,21 +16,26 @@ type FilterGroupPropType = {
 };
 
 const FilterGroup = ({ name, options, defaultValue }: FilterGroupPropType) => {
-  const [filter, setFilter] = useState(defaultValue);
+    const router = useRouter();
+    const params = useSearchParams();
+    const [filter, setFilter] = useState(defaultValue);
 
   if (!options || !name || !defaultValue) return;
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value) {
-      setFilter(value);
+        setFilter(value);
+        const newParams = new URLSearchParams(params);
+        newParams.set(name, value);
+        router.push(`?${newParams.toString()}`, { scroll: false });
     }
   };
 
   return (
     <fieldset className="mt-4 flex flex-col">
       {options.map((item) => {
-        const isActive = item.name === filter;
+        const isActive = params.get(name) !== null ? params.get(name) === item.name : filter === item.name;
         return (
           <label
             key={item.name}
@@ -43,10 +49,10 @@ const FilterGroup = ({ name, options, defaultValue }: FilterGroupPropType) => {
               type="radio"
               name={name}
               value={item.name}
-              checked={filter === item.name}
+              checked={isActive}
               onChange={handleChangeFilter}
             />
-            <span className="flex justify-center items-center h-4 w-4 p-[2px] rounded-full border-2 border-gray-400 transition duration-300 peer-checked:border-accent-700">
+            <span className="flex h-4 w-4 items-center justify-center rounded-full border-2 border-gray-400 p-[2px] transition duration-300 peer-checked:border-accent-700">
               <span
                 className={clsx(
                   "h-full w-full scale-0 rounded-full bg-accent-700 transition duration-300",
