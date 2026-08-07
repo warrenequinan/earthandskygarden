@@ -6,11 +6,11 @@ import { SearchParams } from "@/app/_types/SearchParams.types";
 import FilterList from "./FilterList";
 
 type SidebarFilterPropsType = {
-    params: SearchParams
-}
+  params: SearchParams;
+};
 
 const SidebarFilter = ({ params }: SidebarFilterPropsType) => {
-
+  const hasParams = Object.keys(params).length > 0;
   return (
     <div>
       <div className="border-b border-muted-500 pb-6">
@@ -20,13 +20,15 @@ const SidebarFilter = ({ params }: SidebarFilterPropsType) => {
         </div>
         <FilterList />
       </div>
-      <div className="border-b border-muted-500 pb-6 pt-6">
-        <Button size="small" variant="primary">
-          <span className="flex items-center gap-1">
-            <HiTrash className="text-[15px] text-accent-600" /> Clear All
-          </span>
-        </Button>
-      </div>
+      {hasParams && (
+        <div className="border-b border-muted-500 pb-6 pt-6">
+          <Button size="small" variant="primary">
+            <span className="flex items-center gap-1">
+              <HiTrash className="text-[15px] text-accent-600" /> Clear All
+            </span>
+          </Button>
+        </div>
+      )}
       <ProductsFilter />
     </div>
   );
