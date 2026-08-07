@@ -1,4 +1,4 @@
-import { ProductsCatalogType } from "../_types/product.types";
+import { ProductResponse, ProductsCatalogType } from "../_types/product.types";
 import { supabase } from "./supabase";
 
 type SearchParamValue = string | string[] | null | number;
@@ -10,7 +10,13 @@ type Filter = Record<
 
 type Sort = Record<"show" | "order", SearchParamValue>;
 
-export const getProducts = async (filter: Filter, sort: Sort) => {
+type Pagination = Record<"page" | "pageSize", SearchParamValue>;
+
+export const getProducts = async (
+  filter: Filter,
+  sort: Sort,
+  pagination: Pagination,
+) => {
   let query = supabase
     .from("products")
     .select("id,name,category,price,discount,slug,unit, images");
@@ -60,11 +66,23 @@ export const getProducts = async (filter: Filter, sort: Sort) => {
     }
   }
 
-  const { data: products, error } = await query;
+  if (pagination.page && !Array.isArray(pagination.page)) {
+    query = query.range(
+      (Number(pagination.page) - 1) * Number(pagination.pageSize),
+      Number(pagination.page) * Number(pagination.pageSize) - 1,
+    );
+  }
+
+  const { data, count, error } = await query;
 
   if (error) throw new Error("There is a problem in fetching products.");
 
-  return products as unknown as ProductsCatalogType[];
+  return {
+      data,
+      totalItems: count ?? 0,
+      totalPages: Math.ceil((count ?? 0) / Number(pagination.pageSize)),
+      currentPage: Number(pagination.page),
+  } as unknown as ProductResponse;
 };
 
 export const getPopularProducts = async () => {

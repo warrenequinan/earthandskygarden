@@ -1,12 +1,12 @@
 import Pagination from "./Pagination";
 import ProductItem from "@/app/_components/ui/ProductItem";
 import ErrorMessage from "./ErrorMessage";
-import { ProductsCatalogType } from "@/app/_types/product.types";
+import { ProductResponse } from "@/app/_types/product.types";
 import { getProducts } from "@/app/_lib/products";
 import { SearchParams } from "@/app/_types/SearchParams.types";
 
 const ProductsList = async ({ params }: { params: SearchParams }) => {
-  let products: null | ProductsCatalogType[] = null;
+  let products: null | ProductResponse = null;
   let hasError = false;
   const category = params.category ?? null;
   const discount = params.discount ?? null;
@@ -14,6 +14,9 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
   const priceGte = params.priceGte ?? 0;
   const show = params.show ?? 12;
   const order = params.order ?? null;
+  const page = params.page ?? 1;
+  const pageSize = show;
+
   const filter = {
     category,
     discount,
@@ -21,25 +24,31 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
     priceGte,
     show,
   };
+
   const sort = {
     show,
     order,
   };
 
+  const pagination = {
+    page,
+    pageSize,
+  };
+
   try {
-    products = await getProducts(filter, sort);
+    products = await getProducts(filter, sort, pagination);
   } catch (err) {
     console.error("Error fetching products:", err);
     hasError = true;
   }
 
-  const isProductsAvailable = products && products.length > 0;
+  const isProductsAvailable = products && products.data.length > 0;
 
   return (
     <>
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {isProductsAvailable ? (
-          products?.map((product) => (
+          products?.data.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))
         ) : hasError ? (
