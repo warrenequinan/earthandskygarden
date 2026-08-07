@@ -1,7 +1,6 @@
 import CategoryFilter from "@/app/_components/ui/CategoryFilter";
 import FilterGroup from "./FilterGroup";
 
-const ProductsFilter = () => {
   const category = [
     { name: "vegetables", placeholder: "Vegetables" },
     { name: "fruits", placeholder: "Fruits" },
@@ -15,6 +14,7 @@ const ProductsFilter = () => {
     { name: "with-discount", placeholder: "With Discount" },
     { name: "without-discount", placeholder: "Without Discount" },
   ];
+const ProductsFilter = () => {
 
   return (
     <>

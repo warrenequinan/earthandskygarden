@@ -3,9 +3,16 @@
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
 import Button from "./Button";
 
-const Pagination = () => {
-  const page = 5;
-  const activePage = 3;
+type PaginationPropType = {
+    totalPage: number;
+    activePage: number;
+}
+
+const Pagination = ({ totalPage, activePage }: PaginationPropType) => {
+ 
+    if(!totalPage || totalPage <= 1) {
+        return null;
+    }
 
   return (
     <div className="flex gap-2">
@@ -18,7 +25,7 @@ const Pagination = () => {
         <HiChevronDoubleLeft />
       </Button>
       <div className="flex gap-1">
-        {Array.from({ length: page }).map((_, index) => (
+        {Array.from({ length: totalPage }).map((_, index) => (
           <Button
             variant="secondary"
             size="medium"

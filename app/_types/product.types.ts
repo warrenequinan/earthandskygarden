@@ -17,6 +17,13 @@ export type ProductsCatalogType = {
   images: ProductImages[];
 };
 
+export type ProductResponse = {
+  data: Products[];
+  totalItems: number;
+  totalPages: number;
+  currentPage: number;
+};
+
 export type Products = {
   id: number;
   name: string;
