@@ -28,7 +28,8 @@ const FilterGroup = ({ name, options, defaultValue }: FilterGroupPropType) => {
         setFilter(value);
         const newParams = new URLSearchParams(params);
         newParams.set(name, value);
-        router.push(`?${newParams.toString()}`, { scroll: false });
+        router.replace(`?${newParams.toString()}`, { scroll: false });
+        router.refresh();
     }
   };
 

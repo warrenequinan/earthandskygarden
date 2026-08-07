@@ -30,9 +30,10 @@ const CategoryFilter = ({ category }: CategoryFilterPropType) => {
         });
     }
 
-    router.push(`?${params.toString()}`, {
+    router.replace(`?${params.toString()}`, {
       scroll: false,
     });
+      router.refresh();
   };
 
   return (
