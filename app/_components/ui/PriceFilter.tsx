@@ -8,15 +8,17 @@ const PriceFilter = () => {
   const router = useRouter();
   const [minPrice, setMinPrice] = useState(params.get("priceGte") ?? "");
   const [maxPrice, setMaxPrice] = useState(params.get("priceLte") ?? "");
+  const normalizedValue = (value: string) => value.replace(/^0+(?=\d)/, "");
+  const isNumber = (value: string) => /^\d*$/.test(value);
 
   const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setMinPrice(value);
+    if (isNumber(value)) setMinPrice(normalizedValue(value));
   };
 
   const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setMaxPrice(value);
+    if (isNumber(value)) setMaxPrice(normalizedValue(value));
   };
 
   useEffect(() => {
