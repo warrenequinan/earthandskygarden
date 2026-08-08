@@ -1,6 +1,22 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { HiViewGrid } from "react-icons/hi";
 
 const ShowSort = () => {
+  const params = useSearchParams();
+  const router = useRouter();
+  const show = params.get("show") ?? 12;
+
+  const handleShowSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    const newParams = new URLSearchParams(params);
+    if (!show) return;
+    newParams.set("show", value);
+    router.replace(`?${newParams.toString()}`);
+    router.refresh();
+  };
+
   return (
     <div className="relative flex items-center gap-4">
       <label
@@ -11,7 +27,8 @@ const ShowSort = () => {
       </label>
       <select
         className="h-8 w-16 appearance-none rounded-[5px] bg-muted-500 px-4 text-[13px] font-normal text-muted-700 outline-accent-700"
-        defaultValue={12}
+        value={show}
+        onChange={handleShowSort}
       >
         <option value={6}>6</option>
         <option value={12}>12</option>
