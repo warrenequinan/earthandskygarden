@@ -41,10 +41,10 @@ export const getProducts = async (
 
   if (filter.priceLte && !Array.isArray(filter.priceLte)) {
     query = query.lte("price", filter.priceLte);
+  }
 
-    if (filter.priceGte && !Array.isArray(filter.priceGte)) {
-      query = query.gte("price", filter.priceGte);
-    }
+  if (filter.priceGte && !Array.isArray(filter.priceGte)) {
+    query = query.gte("price", filter.priceGte);
   }
 
   if (sort.show && !Array.isArray(sort.show)) {
