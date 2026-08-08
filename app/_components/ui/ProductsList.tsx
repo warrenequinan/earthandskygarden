@@ -14,7 +14,7 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
   const priceLte = params.priceLte ?? 0;
   const priceGte = params.priceGte ?? 0;
   const show = params.show ?? 12;
-  const order = params.order ?? null;
+  const order = params.order ?? "default";
   const page = params.page ?? 1;
   const pageSize = show;
 
