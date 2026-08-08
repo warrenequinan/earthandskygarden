@@ -1,10 +1,33 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { HiXMark } from "react-icons/hi2";
 
 const FilterList = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const params = useSearchParams();
+
+  const handleDeleteFilter = (key: string, value: string) => {
+    const newParams = new URLSearchParams(params);
+    if (key === "category") {
+      const categories = newParams
+        .getAll("category")
+        .filter((category) => category !== value);
+
+      newParams.delete("category");
+
+      categories.forEach((category) => {
+        newParams.append("category", category);
+      });
+    } else if (key === "priceLte" || key === "priceGte") {
+      newParams.delete("priceLte");
+      newParams.delete("priceGte");
+    } else {
+      newParams.delete(key);
+    }
+    router.replace(`?${newParams.toString()}`, { scroll: false });
+  };
 
   return (
     <div>
@@ -24,6 +47,8 @@ const FilterList = () => {
 
           return (
             <button
+              onClick={() => handleDeleteFilter(key, value)}
+              aria-label={`delete ${key}: ${value}`}
               className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"
               key="price"
             >
@@ -40,6 +65,8 @@ const FilterList = () => {
         if (key === "discount") {
           return (
             <button
+              onClick={() => handleDeleteFilter(key, value)}
+              aria-label={`delete ${key}: ${value}`}
               className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"
               key="price"
             >
@@ -51,6 +78,8 @@ const FilterList = () => {
 
         return (
           <button
+            onClick={() => handleDeleteFilter(key, value)}
+            aria-label={`delete ${key}: ${value}`}
             className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"
             key={key + value}
           >
