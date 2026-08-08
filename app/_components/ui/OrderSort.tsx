@@ -7,6 +7,7 @@ const OrderSort = () => {
   const params = useSearchParams();
   const router = useRouter();
   const order = params.get("order") ?? "default";
+
   const handleOrderSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     const newParams = new URLSearchParams(params);
