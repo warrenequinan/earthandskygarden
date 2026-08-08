@@ -22,6 +22,16 @@ const PriceFilter = () => {
   };
 
   useEffect(() => {
+    if (!params.has("priceGte")) {
+      setMinPrice("");
+    }
+
+    if (!params.has("priceLte")) {
+      setMaxPrice("");
+    }
+  }, [params]);
+
+  useEffect(() => {
     const id = setTimeout(() => {
       const newParams = new URLSearchParams(params);
 
