@@ -1,5 +1,6 @@
 import CategoryFilter from "@/app/_components/ui/CategoryFilter";
 import FilterGroup from "./FilterGroup";
+import PriceFilter from "./PriceFilter";
 
   const category = [
     { name: "vegetables", placeholder: "Vegetables" },
@@ -35,23 +36,7 @@ const ProductsFilter = () => {
           <h5 className="text-lg font-semibold text-primary">Price:</h5>
         </div>
         <div className="mt-4 border-b border-muted-500 pb-6 lg:border-none">
-          <fieldset className="flex items-center gap-2 text-[13px]">
-            <label>
-              <input
-                type="text"
-                className="h-8 w-[100px] rounded-[5px] bg-muted-500 pl-[12px] outline-accent-700"
-                placeholder="₱ 0.00"
-              />
-            </label>
-            <span className="font-medium text-primary">─</span>
-            <label>
-              <input
-                type="text"
-                className="h-8 w-[100px] rounded-[5px] bg-muted-500 pl-[12px] outline-accent-700"
-                placeholder="₱ 700.00"
-              />
-            </label>
-          </fieldset>
+          <PriceFilter />
         </div>
       </div>
     </>
