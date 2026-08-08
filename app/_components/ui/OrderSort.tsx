@@ -1,6 +1,21 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { HiSortAscending } from "react-icons/hi";
 
 const OrderSort = () => {
+  const params = useSearchParams();
+  const router = useRouter();
+  const order = params.get("order") ?? "default";
+  const handleOrderSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    const newParams = new URLSearchParams(params);
+    if (!order) return;
+    newParams.set("order", value);
+    router.replace(`?${newParams.toString()}`);
+    router.refresh();
+  };
+
   return (
     <div className="relative flex items-center gap-4">
       <label
@@ -11,9 +26,10 @@ const OrderSort = () => {
       </label>
       <select
         className="h-8 appearance-none rounded-[5px] bg-muted-500 px-4 text-[13px] font-normal text-muted-700 outline-accent-700"
-        defaultValue={12}
+        value={order}
+        onChange={handleOrderSort}
       >
-        <option value={12}>Default</option>
+        <option value="default">Default</option>
         <option value="price_asc">Price (Low → High)</option>
         <option value="price_desc">Price (High → Low)</option>
         <option value="name_asc">Alphabetically (A-Z)</option>

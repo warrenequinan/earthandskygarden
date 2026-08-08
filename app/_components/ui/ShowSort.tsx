@@ -31,6 +31,7 @@ const ShowSort = () => {
         onChange={handleShowSort}
       >
         <option value={6}>6</option>
+        <option value={9}>9</option>
         <option value={12}>12</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
