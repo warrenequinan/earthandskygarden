@@ -12,7 +12,7 @@ const OrderSort = () => {
     const newParams = new URLSearchParams(params);
     if (!order) return;
     newParams.set("order", value);
-    router.replace(`?${newParams.toString()}`);
+    router.replace(`?${newParams.toString()}`, { scroll: false });
     router.refresh();
   };
 
