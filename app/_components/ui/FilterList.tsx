@@ -4,7 +4,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { HiXMark } from "react-icons/hi2";
 
 const FilterList = () => {
-  const searchParams = useSearchParams();
   const router = useRouter();
   const params = useSearchParams();
 
@@ -31,7 +30,7 @@ const FilterList = () => {
 
   return (
     <div>
-      {Array.from(searchParams.entries()).map(([key, value]) => {
+      {Array.from(params.entries()).map(([key, value]) => {
         if (
           key !== "category" &&
           key !== "discount" &&
@@ -42,15 +41,15 @@ const FilterList = () => {
         }
 
         if (key === "priceLte") {
-          const priceGte = searchParams.get("priceGte") || "0";
-          const priceLte = searchParams.get("priceLte") || "0";
+          const priceGte = params.get("priceGte") || "0";
+          const priceLte = params.get("priceLte") || "0";
 
           return (
             <button
               onClick={() => handleDeleteFilter(key, value)}
               aria-label={`delete ${key}: ${value}`}
               className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"
-              key="price"
+              key={key + value}
             >
               <HiXMark strokeWidth={3} />
               {`₱ ${Number(priceGte).toFixed(2)} ─ ₱ ${Number(priceLte).toFixed(2)}`}
@@ -68,7 +67,7 @@ const FilterList = () => {
               onClick={() => handleDeleteFilter(key, value)}
               aria-label={`delete ${key}: ${value}`}
               className="mb-2 mr-2 inline-flex items-center gap-1 rounded-[5px] bg-muted-500 px-[10px] py-1 text-[13px] font-medium capitalize text-primary transition-colors duration-300 hover:bg-muted-600"
-              key="price"
+              key={key + value}
             >
               <HiXMark strokeWidth={3} />
               {value.replace("-", " ")}
