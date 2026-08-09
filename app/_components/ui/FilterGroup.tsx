@@ -2,8 +2,6 @@
 
 import clsx from "clsx";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-
 type OptionsType = {
   name: string;
   placeholder: string;
@@ -18,33 +16,23 @@ type FilterGroupPropType = {
 const FilterGroup = ({ name, options, defaultValue }: FilterGroupPropType) => {
   const router = useRouter();
   const params = useSearchParams();
-  const [filter, setFilter] = useState(defaultValue);
-  const currentValue = params.get(name);
-
-  useEffect(() => {
-    if (!currentValue) setFilter(defaultValue);
-  }, [params, setFilter, currentValue, defaultValue]);
+  const currentValue = params.get(name) ?? defaultValue;
 
   if (!options || !name || !defaultValue) return;
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (value) {
-      setFilter(value);
-      const newParams = new URLSearchParams(params);
-      newParams.set(name, value);
-      router.replace(`?${newParams.toString()}`, { scroll: false });
-      router.refresh();
-    }
+    if (!value) return;
+    const newParams = new URLSearchParams(params);
+    newParams.set(name, value);
+    router.replace(`?${newParams.toString()}`, { scroll: false });
+    router.refresh();
   };
 
   return (
     <fieldset className="mt-4 flex flex-col">
       {options.map((item) => {
-        const isActive =
-          currentValue !== null
-            ? currentValue === item.name
-            : filter === item.name;
+        const isActive = currentValue === item.name;
         return (
           <label
             key={item.name}
