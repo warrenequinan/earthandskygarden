@@ -18,13 +18,13 @@ export type ProductsCatalogType = {
 };
 
 export type ProductResponse = {
-  data: Products[];
+  data: Product[];
   totalItems: number;
   totalPages: number;
   currentPage: number;
 };
 
-export type Products = {
+export type Product = {
   id: number;
   name: string;
   category: string;
