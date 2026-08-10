@@ -76,7 +76,7 @@ const ProductsList = async ({ params }: { params: SearchParams }) => {
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {isProductsAvailable ? (
           products?.data.map((product) => (
-            <ProductItem key={product.id} product={product} />
+            <ProductItem key={product.id} product={product} href={`/products/${product.slug}`} />
           ))
         ) : hasError ? (
           <ErrorMessage

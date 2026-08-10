@@ -55,7 +55,7 @@ const ProductSlider = ({ products, hasButton = true }: ProductSliderProps) => {
       >
         {products.map((item) => (
           <SwiperSlide key={item.id}>
-            <ProductItem product={item} />
+            <ProductItem product={item} href={`/products/${item.slug}`} />
           </SwiperSlide>
         ))}
       </Swiper>
