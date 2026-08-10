@@ -10,9 +10,10 @@ import Link from "next/link";
 
 type ProductItemType = {
   product: ProductsCatalogType;
+  href: string;
 };
 
-const ProductItem = ({ product }: ProductItemType) => {
+const ProductItem = ({ product, href }: ProductItemType) => {
   const { name, price, discount, images, slug } = product;
   const discountedPrice = discount > 0 ? price * (discount / 100) : 0;
 
@@ -55,7 +56,7 @@ const ProductItem = ({ product }: ProductItemType) => {
           </button>
           <div className="mx-3 h-[14px] w-[0.5px] bg-white opacity-50"></div>
           <Link
-            href={`products/${slug}`}
+            href={href}
             className="relative flex h-[40px] w-[40px] items-center justify-center text-white opacity-50 transition-all duration-300 hover:opacity-100"
           >
             <HiOutlineEye
