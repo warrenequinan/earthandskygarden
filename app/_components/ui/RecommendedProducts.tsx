@@ -18,6 +18,8 @@ const RecommendedProducts = ({ products, title }: RecommendedProductsType) => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [activeSlider, setActiveSlider] = useState(0);
 
+  if (!products || products.length === 0) return null;
+
   return (
     <div className="w-full bg-muted-100 px-6 py-10 xl:px-0">
       <div className="mx-auto max-w-[1320px]">

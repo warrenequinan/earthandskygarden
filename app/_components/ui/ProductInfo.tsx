@@ -1,12 +1,12 @@
 import Badge from "@/app/_components/ui/Badge";
-import type { Products } from "@/app/_types/product.types";
+import type { Product } from "@/app/_types/product.types";
 import clsx from "clsx";
 import { HiShoppingBag } from "react-icons/hi";
 import Button from "./Button";
 import CartCounter from "./CartCounter";
 
 type ProductInfoPropType = {
-  product: Products;
+  product: Product;
 };
 
 const ProductInfo = ({ product }: ProductInfoPropType) => {
@@ -19,7 +19,7 @@ const ProductInfo = ({ product }: ProductInfoPropType) => {
     <>
       <div className="flex gap-2">
         <Badge className="bg-muted-500 text-primary">{product.category}</Badge>
-        {product.discount && (
+        {product.discount > 0 && (
           <Badge className="bg-primary text-white">
             {product.discount}% discount
           </Badge>

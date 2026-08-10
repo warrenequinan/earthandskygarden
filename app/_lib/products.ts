@@ -1,4 +1,8 @@
-import { ProductResponse, ProductsCatalogType } from "../_types/product.types";
+import {
+  Product,
+  ProductResponse,
+  ProductsCatalogType,
+} from "../_types/product.types";
 import { supabase } from "./supabase";
 
 type SearchParamValue = string | string[] | null | number;
@@ -11,6 +15,21 @@ type Filter = Record<
 type Sort = Record<"show" | "order", SearchParamValue>;
 
 type Pagination = Record<"page" | "pageSize", SearchParamValue>;
+
+export const getAllProducts = async () => {
+  const { data: products, error } = await supabase
+    .from("products")
+    .select(
+      "id,name,category,price,description,stock,discount,slug,unit,images,sku",
+    );
+
+  if (error) {
+    console.error(error);
+    throw new Error("There is a problem a problem in fetching products");
+  }
+
+  return products;
+};
 
 export const getProducts = async (
   filter: Filter,
@@ -95,4 +114,39 @@ export const getPopularProducts = async () => {
   return products.map(
     (item) => item.products as unknown as ProductsCatalogType,
   );
+};
+
+export const getProductBySlug = async (slug: string): Promise<Product> => {
+  const { data: product, error } = await supabase
+    .from("products")
+    .select(
+      "id,name,category,price,description,stock,discount,slug,unit,images,sku",
+    )
+    .eq("slug", slug)
+    .single();
+
+  if (error) {
+    console.error(error);
+    throw new Error(`There is a problem in fetching the product.`);
+  }
+
+  return product;
+};
+
+export const getProductsByCategory = async (
+  category: string,
+  currentSlug: string,
+): Promise<ProductsCatalogType[]> => {
+  const { data: products, error } = await supabase
+    .from("products")
+    .select("id,name,category,price,discount,slug,unit,images")
+    .eq("category", category)
+    .neq("slug", currentSlug)
+    .limit(6);
+
+  if (error) {
+    console.error(error);
+    throw new Error("There is a problem in fetching the products");
+  }
+  return products;
 };
