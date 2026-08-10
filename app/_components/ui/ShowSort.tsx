@@ -13,7 +13,7 @@ const ShowSort = () => {
     const newParams = new URLSearchParams(params);
     if (!show) return;
     newParams.set("show", value);
-    router.replace(`?${newParams.toString()}`);
+    router.replace(`?${newParams.toString()}`, { scroll: false });
     router.refresh();
   };
 
