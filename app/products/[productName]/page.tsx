@@ -6,7 +6,6 @@ import SectionContainer from "@/app/_components/ui/SectionContainer";
 import {
   getAllProducts,
   getProductBySlug,
-  getProducts,
   getProductsByCategory,
 } from "@/app/_lib/products";
 import { Metadata } from "next";

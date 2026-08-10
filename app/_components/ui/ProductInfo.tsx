@@ -56,12 +56,7 @@ const ProductInfo = ({ product }: ProductInfoPropType) => {
         </p>
       </div>
       <p className="pb-10 text-base font-medium text-muted-700">
-        Fresh, crisp carrots packed with natural sweetness and essential
-        nutrients. Carefully harvested for peak freshness, they offer a
-        satisfying crunch and vibrant flavor that enhances a variety of dishes.
-        Perfect for salads, soups, stir-fries, roasting, juicing, and healthy
-        snacking, these versatile vegetables are a rich source of beta-carotene,
-        fiber, and vitamins that support a balanced diet and healthy lifestyle.
+        {product.description}
       </p>
       <div className="flex items-end gap-8">
         <div className="flex flex-col gap-2">
