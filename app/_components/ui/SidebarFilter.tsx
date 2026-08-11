@@ -6,9 +6,10 @@ import ClearFilter from "./ClearFilter";
 
 type SidebarFilterPropsType = {
   params: SearchParams;
+  sidebarName: string;
 };
 
-const SidebarFilter = ({ params }: SidebarFilterPropsType) => {
+const SidebarFilter = ({ params, sidebarName }: SidebarFilterPropsType) => {
   const hasParams = Object.keys(params).length > 0;
   return (
     <div>
@@ -24,7 +25,7 @@ const SidebarFilter = ({ params }: SidebarFilterPropsType) => {
           <ClearFilter />
         </div>
       )}
-      <ProductsFilter />
+      <ProductsFilter sidebarName={sidebarName} />
     </div>
   );
 };

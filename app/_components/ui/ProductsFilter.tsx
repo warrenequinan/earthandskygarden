@@ -14,9 +14,12 @@ import PriceFilter from "./PriceFilter";
     { name: "all", placeholder: "All" },
     { name: "with-discount", placeholder: "With Discount" },
     { name: "without-discount", placeholder: "Without Discount" },
-  ];
-const ProductsFilter = () => {
-
+];
+  
+type ProductsFilterType = {
+  sidebarName: string;
+};
+const ProductsFilter = ({ sidebarName }: ProductsFilterType) => {
   return (
     <>
       <div className="border-b border-muted-500 pb-6 pt-6">
@@ -29,7 +32,12 @@ const ProductsFilter = () => {
         <div className="flex items-center gap-2">
           <h5 className="text-lg font-semibold text-primary">Discount:</h5>
         </div>
-        <FilterGroup name="discount" options={discount} defaultValue="all" />
+        <FilterGroup
+          name="discount"
+          groupName={sidebarName}
+          options={discount}
+          defaultValue="all"
+        />
       </div>
       <div className="pb-0 pt-6 lg:pb-6">
         <div className="flex items-center gap-2">

@@ -44,6 +44,7 @@ export default function RootLayout({ children }: RootLayoutPropType) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <div id="sidebar-root"></div>
       </body>
     </html>
   );
