@@ -2,6 +2,11 @@ import ProductsSort from "@/app/_components/ui/ProductsSort";
 import ProductsList from "./ProductsList";
 import { Suspense } from "react";
 import { SearchParams } from "@/app/_types/SearchParams.types";
+import MobileSidebar, {
+  MobileSidebarContent,
+  MobileSidebarTrigger,
+} from "./MobileSidebar";
+import SidebarFilter from "./SidebarFilter";
 
 type ProductsCatalogProps = {
   params: SearchParams;
@@ -10,7 +15,16 @@ type ProductsCatalogProps = {
 const ProductsCatalog = ({ params }: ProductsCatalogProps) => {
   return (
     <div>
-      <div className="flex flex-col-reverse items-start justify-end gap-4 md:flex-row md:items-center">
+      <div className="flex flex-col-reverse items-start justify-between gap-4 md:flex-row md:items-center lg:justify-end">
+        <div className="lg:hidden">
+          <MobileSidebar>
+            <MobileSidebarTrigger>Open sidebar</MobileSidebarTrigger>
+            <MobileSidebarContent>
+              <SidebarFilter params={params} sidebarName="mobile-filter" />
+            </MobileSidebarContent>
+          </MobileSidebar>
+        </div>
+
         <ProductsSort />
       </div>
       <Suspense

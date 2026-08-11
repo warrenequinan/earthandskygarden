@@ -11,9 +11,15 @@ type FilterGroupPropType = {
   name: string;
   options: OptionsType[];
   defaultValue: string;
+  groupName: string;
 };
 
-const FilterGroup = ({ name, options, defaultValue }: FilterGroupPropType) => {
+const FilterGroup = ({
+  name,
+  options,
+  defaultValue,
+  groupName,
+}: FilterGroupPropType) => {
   const router = useRouter();
   const params = useSearchParams();
   const currentValue = params.get(name) ?? defaultValue;
@@ -44,7 +50,7 @@ const FilterGroup = ({ name, options, defaultValue }: FilterGroupPropType) => {
             <input
               className="peer sr-only mr-2"
               type="radio"
-              name={name}
+              name={groupName}
               value={item.name}
               checked={isActive}
               onChange={handleChangeFilter}
