@@ -7,6 +7,8 @@ import MobileSidebar, {
   MobileSidebarTrigger,
 } from "./MobileSidebar";
 import SidebarFilter from "./SidebarFilter";
+import Sidebar from "./Sidebar";
+import { HiAdjustments } from "react-icons/hi";
 
 type ProductsCatalogProps = {
   params: SearchParams;
@@ -15,12 +17,16 @@ type ProductsCatalogProps = {
 const ProductsCatalog = ({ params }: ProductsCatalogProps) => {
   return (
     <div>
-      <div className="flex flex-col-reverse items-start justify-between gap-4 md:flex-row md:items-center lg:justify-end">
+      <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center lg:justify-end">
         <div className="lg:hidden">
           <MobileSidebar>
-            <MobileSidebarTrigger>Open sidebar</MobileSidebarTrigger>
+            <MobileSidebarTrigger>
+              <HiAdjustments className="text-xl text-white" /> Filter
+            </MobileSidebarTrigger>
             <MobileSidebarContent>
-              <SidebarFilter params={params} sidebarName="mobile-filter" />
+              <Sidebar>
+                <SidebarFilter params={params} sidebarName="mobile-filter" />
+              </Sidebar>
             </MobileSidebarContent>
           </MobileSidebar>
         </div>

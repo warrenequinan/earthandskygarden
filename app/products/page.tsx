@@ -4,6 +4,7 @@ import SidebarFilter from "@/app/_components/ui/SidebarFilter";
 import ProductsCatalog from "../_components/ui/ProductsCatalog";
 import { Metadata } from "next";
 import { SearchParamsType } from "../_types/SearchParams.types";
+import Sidebar from "../_components/ui/Sidebar";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -38,9 +39,9 @@ const Page = async ({ searchParams }: PageProps) => {
       />
       <SectionContainer>
         <div className="grid grid-cols-1 gap-8 px-6 lg:grid-cols-[300px_1fr] lg:px-0">
-          <div className="hidden lg:block">
+          <Sidebar className="hidden lg:block">
             <SidebarFilter params={params} sidebarName="desktop-filter" />
-          </div>
+          </Sidebar>
           <ProductsCatalog params={params} />
         </div>
       </SectionContainer>
