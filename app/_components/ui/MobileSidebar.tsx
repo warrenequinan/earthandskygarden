@@ -22,7 +22,7 @@ const useSidebarContext = () => {
   const context = useContext(SidebarContext);
 
   if (!context) {
-    throw new Error("ProductCard components must be used inside ProductCard");
+    throw new Error("useSidebarContext must be used inside MobileSidebar");
   }
 
   return context;
