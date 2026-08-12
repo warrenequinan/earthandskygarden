@@ -1,3 +1,4 @@
+import ErrorMessage from "@/app/_components/ui/ErrorMessage";
 import HeroSection from "@/app/_components/ui/HeroSection";
 import ProductInfo from "@/app/_components/ui/ProductInfo";
 import ProductThumbSlider from "@/app/_components/ui/ProductThumbSlider";
@@ -8,18 +9,27 @@ import {
   getProductBySlug,
   getProductsByCategory,
 } from "@/app/_lib/products";
+import { Product, ProductsCatalogType } from "@/app/_types/product.types";
 import { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { productName } = await params;
-  const product = await getProductBySlug(productName);
 
-  return {
-    title: product.name,
-    description: product.description,
-  };
+  try {
+    const product = await getProductBySlug(productName);
+
+    return {
+      title: product.name,
+      description: product.description,
+    };
+  } catch {
+    return {
+      title: "Product",
+      description: "Unable to load product information.",
+    };
+  }
 }
 
 export async function generateStaticParams() {
@@ -43,21 +53,29 @@ type PageProps = {
 
 const Page = async ({ params }: PageProps) => {
   const { productName } = await params;
-  const product = await getProductBySlug(productName);
-  const otherProducts = await getProductsByCategory(
-    product.category,
-    product.slug,
-  );
+  let product: Product | null = null;
+  let otherProducts: ProductsCatalogType[] | null = null;
+  let hasError = false;
+
+  try {
+    product = await getProductBySlug(productName);
+    otherProducts = await getProductsByCategory(product.category, product.slug);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      hasError = true;
+      console.error(err.message);
+    }
+  }
 
   const title = {
     before: "Fresh",
-    highlight: product.name,
+    highlight: product?.name ?? "",
     after: "",
   };
   const breadcrumb = [
     { name: "Home", link: "/" },
     { name: "All products", link: "/products" },
-    { name: product.name },
+    { name: product?.name ?? "" },
   ];
 
   return (
@@ -68,18 +86,27 @@ const Page = async ({ params }: PageProps) => {
         background={background}
       />
       <SectionContainer className="mb-[72px] px-6 xl:px-0">
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
-          <div className="w-full min-w-0 flex-1 lg:max-w-[600px]">
-            <ProductThumbSlider images={product.images} />
-          </div>
-          <div className="flex-1">
-            <div className="sticky top-24">
-              <ProductInfo product={product} />
+        {product ? (
+          <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+            <div className="w-full min-w-0 flex-1 lg:max-w-[600px]">
+              <ProductThumbSlider images={product.images} />
+            </div>
+            <div className="flex-1">
+              <div className="sticky top-24">
+                <ProductInfo product={product} />
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          hasError && (
+            <ErrorMessage
+              message="There is a problem in fetching the product"
+              subtext="Please try again later."
+            />
+          )
+        )}
       </SectionContainer>
-      <RecommendedProducts products={otherProducts} />
+      {otherProducts && <RecommendedProducts products={otherProducts} />}
     </>
   );
 };
