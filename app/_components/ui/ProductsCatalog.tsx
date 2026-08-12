@@ -9,6 +9,7 @@ import MobileSidebar, {
 import SidebarFilter from "./SidebarFilter";
 import Sidebar from "./Sidebar";
 import { HiAdjustments } from "react-icons/hi";
+import ProductsLoader from "./ProductsLoader";
 
 type ProductsCatalogProps = {
   params: SearchParams;
@@ -35,9 +36,7 @@ const ProductsCatalog = ({ params }: ProductsCatalogProps) => {
       </div>
       <Suspense
         fallback={
-          <p className="text-center text-lg font-semibold text-primary">
-            Loading products...
-          </p>
+          <ProductsLoader items={6} />
         }
       >
         <ProductsList params={params} />
