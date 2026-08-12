@@ -1,9 +1,9 @@
 import SectionHeader from "@/app/_components/ui/SectionHeader";
-import Button from "@/app/_components/ui/Button";
 import CategoryCard from "@/app/_components/ui/CategoryCard";
 import { Suspense } from "react";
 import SliderLoader from "../ui/SliderLoader";
 import ProductsSliderSection from "../ui/ProductsSliderSection";
+import ButtonLink from "../ui/ButtonLink";
 
 const Products = () => {
     
@@ -19,9 +19,9 @@ const Products = () => {
             Fresh Vegetables
           </h3>
           <div className="z-10 mt-2">
-            <Button size="default" variant="primary">
+            <ButtonLink size="default" variant="primary" href="/products?category=vegetables">
               Shop Vegetables
-            </Button>
+            </ButtonLink>
           </div>
         </CategoryCard>
 
@@ -33,9 +33,9 @@ const Products = () => {
             Seasonal Fruits
           </h3>
           <div className="z-10 mt-2">
-            <Button size="default" variant="primary">
+            <ButtonLink size="default" variant="primary" href="/products?category=fruits">
               Shop Fruits
-            </Button>
+            </ButtonLink>
           </div>
         </CategoryCard>
 
@@ -47,9 +47,9 @@ const Products = () => {
             Meat & Poultry
           </h3>
           <div className="z-10 mt-2">
-            <Button size="default" variant="primary">
+            <ButtonLink size="default" variant="primary" href="/products?category=meat&category=poultry">
               Shop Meat & Poultry
-            </Button>
+            </ButtonLink>
           </div>
         </CategoryCard>
       </div>
