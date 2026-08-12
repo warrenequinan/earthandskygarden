@@ -39,7 +39,7 @@ import ButtonLink from "../ui/ButtonLink";
       subText: "Fresh From Local Farms",
       link: {
         text: "Shop Vegetables & Fruits",
-        url: "",
+        url: "/products?category=vegetables&category=fruits",
       },
       backgroundImage: {
         url: heroSlider2,
@@ -55,7 +55,7 @@ import ButtonLink from "../ui/ButtonLink";
       subText: "Clean & Fresh Protein Source",
       link: {
         text: "Shop Meat & Poultry",
-        url: "",
+        url: "/products?category=meat&category=poultry",
       },
       backgroundImage: {
         url: heroSlider3,

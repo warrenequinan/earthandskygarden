@@ -84,7 +84,7 @@ export const MobileSidebarContent = ({ children }: MobileSidebarProps) => {
       <div
         ref={sidebarRef}
         className={clsx(
-          "fixed left-0 right-0 top-0 z-[99999] h-full w-full bg-white transition-all duration-300 sm:w-[300px] lg:hidden",
+          "fixed left-0 right-0 top-0 z-[99999] h-full w-full overflow-x-scroll bg-white transition-all duration-300 sm:w-[300px] lg:hidden",
           isOpen ? "translate-x-[0]" : "-translate-x-[100%]",
         )}
       >
