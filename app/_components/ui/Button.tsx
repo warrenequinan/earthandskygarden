@@ -18,9 +18,9 @@ const buttonSize: Record<"small" | "medium" | "default", string> = {
 
 const buttonVariant = {
   primary:
-    "font-semibold transition-colors hover:bg-accent-800 duration-300 text-white bg-accent-700 gap-[10px] ",
+    "font-semibold transition-all hover:bg-accent-800 duration-300 text-white bg-accent-700 gap-[10px] ",
   secondary:
-    "bg-muted-500 text-muted-700 hover:bg-accent-700 hover:text-white transition-colors duration-300 ",
+    "bg-muted-500 text-muted-700 hover:bg-accent-700 hover:text-white transition-all duration-300 ",
   transparent: "bg-transparent",
 };
 
@@ -49,7 +49,7 @@ const Button = ({
         children
       ) : (
         <span className="relative h-full overflow-hidden">
-          <span className="flex items-center gap-2 transition-transform duration-500 group-hover:-translate-y-full">
+          <span className="flex items-center gap-2 transition-transform duration-500 group-hover:-translate-y-full ">
             {children}
           </span>
 
